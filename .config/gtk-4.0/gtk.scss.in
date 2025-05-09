@@ -1,0 +1,11 @@
+$toolkit: "gtk4";
+$dark-theme: @dark_theme@;
+$light-topbar: @light_topbar@;
+$compact: @compact@;
+$version: @version@;
+
+@import "@current_source_dir@/../variables";
+@import "@current_source_dir@/../colors";
+@import "@current_source_dir@/sass/drawing";
+@import "@current_source_dir@/sass/common";
+@import "@current_source_dir@/../gtk-3.0/sass/colors-public";

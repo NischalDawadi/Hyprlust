@@ -1,0 +1,637 @@
+// based css:
+// https://github.com/mate-desktop/mate-themes/blob/master/desktop-themes/Menta/gtk-3.0/mate-applications.css
+
+/**
+ * Mate-Panel
+ */
+
+// first make all transparent
+.mate-panel-menu-bar menubar,
+#PanelApplet-window-menu-applet-button {
+  background-color: transparent;
+}
+
+// let's start it
+.mate-panel-menu-bar {
+  background-color: $panel;
+  color: hint($on-panel);
+  font-weight: 500;
+
+  button {
+    min-height: 16px;
+    min-width: 16px;
+    padding: 0; // NOTE: Most buttons padding are hard-coded to 0 (except for hide buttons)
+    border-radius: 0;
+    color: hint($on-panel);
+    @include ink-color($on-panel, $button-style: "flat");
+
+    &:disabled {
+      background-color: transparent;
+      color: disabled-hint($on-panel);
+    }
+
+    &:checked {
+      $background-color: overlay("activated", $on-panel);
+      color: $on-panel;
+      @include ink-color($on-panel, $button-style: "flat", $on: $background-color);
+
+      &:disabled {
+        background-color: overlay("activated", $on-panel);
+        color: disabled($on-panel);
+      }
+    }
+  }
+}
+
+// hide buttons
+PanelToplevel.horizontal > grid > button {
+  min-width: 24px;
+}
+
+PanelToplevel.vertical > grid > button {
+  min-height: 24px;
+}
+
+#PanelApplet {
+  // border-width: 0;
+}
+
+PanelSeparator {
+  color: divider($on-panel);
+}
+
+// the grid left from na-tray and wncktasklist
+MatePanelAppletFrameDBus > MatePanelAppletFrameDBus {
+  background-image:
+    repeating-linear-gradient(
+      currentcolor,
+      currentcolor 4px,
+      transparent 4px,
+      transparent 6px
+    );
+  background-repeat: no-repeat;
+  background-size: 4px 10px;
+  color: disabled-hint($on-panel);
+
+  &:dir(ltr) {
+    background-position: 3px;
+  }
+
+  &:dir(rtl) {
+    background-position: calc(100% - 3px);
+  }
+}
+
+// main menu
+.mate-panel-menu-bar {
+  // set normal menubar button
+  menubar > menuitem {
+    color: hint($on-panel);
+
+    &:hover {
+      background-color: overlay("activated", $on-panel);
+      color: $on-panel;
+    }
+
+    &:disabled {
+      color: disabled-hint($on-panel);
+    }
+  }
+
+  &.horizontal menubar > menuitem {
+    padding: 0 8px;
+  }
+
+  &.vertical menubar > menuitem {
+    padding: 8px 0;
+  }
+
+  // set normal menubar menuitem
+  menubar menu > menuitem {
+    // adjust sizing since the menuitem has large icons
+    min-height: $menuitem-size;
+    padding: 0 6px;
+    // font-weight: initial;
+  }
+}
+
+// all applets
+.mate-panel-menu-bar #PanelApplet button {
+  -GtkWidget-window-dragging: true;
+  // padding: 4px;
+}
+
+.mate-panel-menu-bar #tasklist-button {
+  border-image:
+    radial-gradient(
+      circle closest-corner at center calc(100% - 1px),
+      currentcolor 0%,
+      transparent 0%
+    ) 0 0 0 / 0 0 0;
+
+  &:checked {
+    border-image:
+      radial-gradient(
+        circle closest-corner at center calc(100% - 1px),
+        currentcolor 100%,
+        transparent 0%
+      ) 0 0 2 / 0 0 2px;
+  }
+
+  // instead of #tasklist-button { padding: 0 4px; }
+  image:dir(ltr),
+  label:dir(rtl) {
+    padding-left: 4px;
+  }
+
+  label:dir(ltr),
+  image:dir(rtl) {
+    padding-right: 4px;
+  }
+}
+
+// #tasklist-button is always horizontal even if the panel is vertical
+.mate-panel-menu-bar.vertical #tasklist-button {
+  min-height: 32px;
+}
+
+#showdesktop-button {
+  .mate-panel-menu-bar.horizontal & image {
+    min-width: 24px;
+    padding: 0 4px;
+  }
+
+  .mate-panel-menu-bar.vertical & image {
+    min-height: 24px;
+    padding: 4px 0;
+  }
+}
+
+// WnckPager
+PanelApplet.wnck-applet .wnck-pager {
+  background-color: transparent;
+  color: primary($on-panel);
+
+  &:hover {
+    background-color: overlay("hover", $on-panel);
+  }
+
+  &:active {
+    background-color: overlay("pressed", $on-panel);
+  }
+
+  &:selected {
+    background-color: $primary;
+  }
+}
+
+#clock-applet-button {
+  .mate-panel-menu-bar.horizontal & label {
+    padding: 0 8px;
+  }
+
+  .mate-panel-menu-bar.vertical & label {
+    padding: 8px 0;
+  }
+}
+
+#MatePanelPopupWindow {
+  border: 1px solid divider($on-surface);
+  border-radius: $corner-radius + 1px;
+  box-shadow: inset 0 1px highlight($surface-z8);
+  background-clip: padding-box;
+  background-color: $surface-z8;
+
+  frame > border {
+    border-style: none;
+    background-color: transparent;
+  }
+
+  calendar {
+    border-style: none;
+
+    &:not(:selected) {
+      background-color: transparent;
+    }
+
+    // Add separator between calendar and location
+    + box {
+      margin-top: -5px;
+      padding-top: 5px;
+      border-top: 1px solid divider($on-surface);
+    }
+  }
+
+  expander > title {
+    min-height: 32px;
+  }
+
+  button {
+    @extend %button-flat-basic;
+
+    padding: 4px 16px;
+  }
+
+  // Weird, this sets the border color of the clockmap
+  > frame > box > box > box > widget {
+    color: divider($on-surface);
+  }
+}
+
+na-tray-applet {
+  -NaTrayApplet-icon-padding: 3px;
+  -NaTrayApplet-icon-size: 16;
+}
+
+// remove right space a bit
+na-tray-applet > widget > box {
+  // margin-right: 2px;
+}
+
+// no background for icon-padding area
+na-tray-applet widget box widget {
+  // background-color: transparent;
+}
+
+// Classic icon style
+.mate-panel-menu-bar {
+  -PanelMenuBar-icon-visible: true;
+}
+
+// volume applet, brightness applet
+.mate-panel-applet-slider {
+  border: 1px solid divider($on-surface);
+  border-radius: $corner-radius + 1px;
+  box-shadow: inset 0 1px highlight($surface-z8);
+  background-clip: padding-box;
+  background-color: $surface-z8;
+
+  frame > border {
+    border-style: none;
+    background-color: transparent;
+  }
+}
+
+// mate-menu
+
+// #PanelApplet itself cannot change the background-color
+#PanelApplet {
+  &:not(:selected) > box {
+    transition: $transition;
+  }
+
+  &:selected > box {
+    background-color: overlay("activated", $on-panel);
+    color: $on-panel;
+  }
+}
+
+#mate-menu {
+  // FIXME, does not work
+  border: 1px solid divider($on-surface);
+  box-shadow: inset 0 1px highlight($surface-z8);
+  background-clip: padding-box;
+  background-color: $surface-z8;
+
+  button {
+    @extend %button-flat-basic;
+
+    min-height: 24px;
+    min-width: 24px;
+    padding: 4px 0;
+    color: $on-surface;
+    font-weight: normal;
+
+    &:not(.flat) {
+      background-color: overlay("activated", $on-surface);
+    }
+
+    image,
+    label + label {
+      color: hint($on-surface);
+    }
+  }
+
+  entry {
+    margin: 0 0 4px;
+
+    image {
+      margin: 0;
+    }
+
+    + button {
+      margin: 0 4px 4px;
+      padding: ($medium-size - 24px) / 2;
+    }
+  }
+}
+
+// brisk-menu
+.brisk-menu {
+  box-shadow: inset 0 1px highlight($surface-z8);
+  background-color: $surface-z8;
+
+  entry {
+    margin-bottom: -2px;
+    border-bottom: 1px solid divider($on-surface);
+    border-image: none;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  entry + box > box {
+    &:dir(ltr) {
+      margin-right: -2px;
+      border-right: 1px solid divider($on-surface);
+    }
+
+    &:dir(rtl) {
+      margin-left: -2px;
+      border-left: 1px solid divider($on-surface);
+    }
+  }
+
+  .categories-list {
+    padding-top: 4px;
+
+    button {
+      margin: 0 4px;
+    }
+  }
+
+  .session-button {
+    padding: ($large-size - 24px) / 2;
+  }
+
+  .frame {
+    border-style: none;
+    background-color: transparent;
+  }
+
+  .apps-list {
+    padding: 4px 0;
+    background-color: transparent;
+
+    row {
+      padding: 0;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+
+    button {
+      border-radius: 0;
+      color: $on-surface;
+      font-weight: normal;
+    }
+  }
+}
+
+/**
+ * CAJA File manager
+ */
+
+// pathbar toggle button
+.caja-navigation-window box.horizontal > button.toggle.image-button {
+  @extend %button-flat-activatable;
+
+  border-radius: $corner-radius;
+}
+
+// pathbar
+// pathbar buttons
+.caja-pathbar button {
+  margin: 0 -1px 0 -2px;
+  // padding: 4px;
+
+  @extend %pathbar_button;
+
+  // NOTE: padding is hard-coded to 0
+  &.slider-button {
+    min-width: 24px;
+  }
+
+  // arrow button
+  > widget {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+    -GtkArrow-arrow-scaling: 1;
+  }
+}
+
+// places, treeview, history, information, emblems and notes
+// .caja-side-pane notebook treeview.view,
+// .caja-side-pane notebook textview.view text,
+.caja-side-pane notebook viewport.frame,
+.caja-side-pane notebook widget .vertical {
+  // background-color: $surface-z1;
+}
+
+// treeview rows
+.caja-side-pane treeview.view {
+  // padding: 2px 0;
+}
+
+.caja-side-pane notebook,
+.caja-notebook {
+  border-top: 1px solid divider($on-surface);
+
+  .frame {
+    border-style: none;
+    background-color: transparent;
+  }
+}
+
+// window and desktop mode
+.caja-canvas-item {
+  border-radius: $corner-radius;
+}
+
+// desktop mode
+.caja-desktop.caja-canvas-item {
+  @extend %iconview-desktop;
+}
+
+.caja-desktop EelEditableLabel.entry {
+}
+
+// override https://github.com/mate-desktop/caja/blob/master/data/caja.css
+.caja-desktop.view .entry,
+.caja-navigation-window .view .entry {
+  border: none;
+  border-radius: $corner-radius;
+  background-color: entry-fill($on-surface);
+  background-image: none;
+  color: $on-surface;
+
+  &:selected {
+    background-color: $overlay-selected;
+  }
+}
+
+.caja-desktop.view .entry {
+  background-color: $scrim-alt;
+  color: $on-dark;
+  text-shadow: $text-shadow;
+  caret-color: currentcolor; // this shouldn't be needed.
+
+  &:selected {
+    // FIXME: this should have light overlay.
+    background-color: $overlay-selected;
+  }
+}
+
+// statusbar
+.caja-navigation-window statusbar {
+  margin: 0 -10px;
+  padding: 0 4px;
+  border-top: 1px solid divider($on-surface);
+}
+
+// infobar
+
+.caja-notebook frame > border {
+  border-style: none;
+  background-color: transparent;
+}
+
+#caja-extra-view-widget {
+  border-bottom: 1px solid divider($on-surface);
+  // background-color: $surface-z1;
+
+  > box > box > label {
+    font-weight: bold;
+  }
+
+  button {
+    @extend %button-flat;
+
+    &:not(:disabled) {
+      color: $primary;
+      @include ink-color($primary, $button-style: "flat");
+    }
+  }
+}
+
+/**
+ * Pluma
+ */
+
+// Pluma status bar
+.pluma-window statusbar {
+  margin: 0 -10px;
+  padding: 0 4px;
+  border-top: 1px solid divider($on-surface);
+
+  frame {
+    > border {
+      border-style: none;
+      background-color: transparent;
+    }
+
+    button.flat {
+      padding: 0 4px;
+      border-radius: 0;
+
+      widget {
+        -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+        -GtkArrow-arrow-scaling: 1;
+      }
+    }
+  }
+}
+
+// Printpreview
+.pluma-print-preview {
+  toolbar {
+    border-bottom: 1px solid divider($on-surface);
+  }
+
+  scrolledwindow {
+    // background-color: $surface-z1;
+  }
+}
+
+// sidebar file-browser
+.pluma-window paned.horizontal box.vertical {
+  box.horizontal button.flat {
+    margin: 1px;
+
+    @extend %button-small;
+  }
+
+  .frame {
+    border-style: none;
+    background-color: transparent;
+  }
+
+  notebook.frame {
+    margin-top: -1px;
+    border-top: 1px solid divider($on-surface);
+
+    box.vertical toolbar.horizontal {
+      border-bottom: 1px solid divider($on-surface);
+    }
+  }
+}
+
+/**
+ * Atril
+ */
+
+.atril-window paned.horizontal box.vertical {
+  .frame {
+    border-style: none;
+    background-color: transparent;
+  }
+
+  notebook .frame {
+    border-top: 1px solid divider($on-surface);
+  }
+}
+
+/* mate-screensaver lock dialog */
+
+.lock-dialog {
+  border: 1px solid divider($on-surface);
+  border-radius: $corner-radius + 1px;
+  box-shadow: $shadow-z6, inset 0 1px highlight($surface-z8); // not sure if box-shadow works here
+  background-clip: padding-box;
+  background-color: $surface-z8;
+
+  frame > border {
+    border-style: none;
+    background-color: transparent;
+  }
+
+  button {
+    @extend %button-flat;
+
+    &:not(:disabled) {
+      color: $primary;
+      @include ink-color($primary, $button-style: "flat");
+    }
+  }
+}
+
+/* multimedia OSD */
+
+MsdOsdWindow.background.osd {
+  border-radius: $corner-radius;
+  background-color: $tooltip;
+  color: $on-tooltip;
+
+  .trough {
+    border-radius: 0;
+    background-color: disabled-stroke($on-tooltip);
+  }
+
+  .progressbar {
+    border-radius: 0;
+    background-color: $on-tooltip;
+  }
+
+  // For mate-settings-daemon noncomposited osd windows
+  &.msd-osd-window-solid {
+  }
+}

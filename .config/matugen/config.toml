@@ -1,0 +1,31 @@
+# Global Configs
+[config]
+version_check = true
+[config.reload_apps_list]
+gtk_theme = true
+
+
+[templates]
+gtk3 = { input_path = '~/.config/matugen/templates/gtk-colors.css', output_path = '~/.config/gtk-3.0/gtk.css' }
+gtk4 = { input_path = '~/.config/matugen/templates/gtk-colors.css', output_path = '~/.config/gtk-4.0/gtk.css' }
+qt5ct = { input_path = '~/.config/matugen/templates/qtct-colors.conf', output_path = '~/.config/qt5ct/colors/matugen.conf' }
+qt6ct = { input_path = '~/.config/matugen/templates/qtct-colors.conf', output_path = '~/.config/qt6ct/colors/matugen.conf' }
+
+# Foot
+[templates.foot]
+input_path = '~/.config/matugen/templates/matugen-foot.ini'
+output_path = '~/.config/foot/matugen/matugen-foot-colors.ini'
+
+# Spicetify
+[templates.spicetify]
+input_path = '~/.config/matugen/templates/spotify-colors.ini'
+output_path = '~/.config/spicetify/Themes/Comfy/color.ini'
+post_hook = 'killall -SIGUSR2 spotify'
+# Zathura
+[templates.zathura]
+input_path = '~/.config/matugen/templates/matugen-zathurarc'
+output_path = '~/.config/zathura/matugen-zathurarc'
+# Kvantum
+#[templates.kvantum]
+#input_path = '~/.config/matugen/templates/matugen.kvconfig'
+#output_path = '~/.config/Kvantum/matugen/matugen.kvconfig

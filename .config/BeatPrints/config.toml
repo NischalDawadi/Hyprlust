@@ -1,0 +1,7 @@
+[general]
+search_limit = 7
+output_directory = "/home/hypr/Pictures/Wallpapers/"
+
+[credentials]
+client_id = "2929476f7a3349c8964af1a938c9e42d"
+client_secret = "a36b2435b4a142e6a42ad46609f2e797"

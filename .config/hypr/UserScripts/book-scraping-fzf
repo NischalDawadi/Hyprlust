@@ -1,0 +1,310 @@
+#!/bin/bash
+
+# Created by IamJony
+# My github: https://github.com/IamJony
+# DESCRIPTION: A Bash script to download books using libraries shadows
+# Date: 2024-21-07 
+# Version: 1.3.3-1 
+
+version_number="1.3.3-1"
+
+# Local version
+version_info() {
+    printf "%s\n" "$version_number"
+    exit 0
+}
+
+# Cheack update
+update_script() {
+    update="$(curl -s -A "$agent" "https://raw.githubusercontent.com/IamJony/book-scraping/main/book-scraping-fzf")" || die "Connection error"
+    update="$(printf '%s\n' "$update" | diff -u "$0" -)"
+    if [ -z "$update" ]; then
+		echo -e $BBlue''
+        printf "Script is up to date :)\n"
+        echo -e $White''
+    else
+        if printf '%s\n' "$update" | patch "$0" -; then
+			echo -e $BGreen''
+            printf "Script has been updated\n"
+			echo -e $White''
+        else
+			echo -e $BRed''
+            die "Can't update for some reason!"
+			echo -e $White''
+        fi
+    fi
+    exit 0
+}
+
+
+ anna='https://annas-archive.org/search?q='
+
+
+
+
+# User Agent Random
+numRandom=$((RANDOM % 59))
+agent=$(jq --raw-output ".[${numRandom}]" user-agent.json 2>/dev/null)
+
+if [[ -z "$agent" ]]; then
+    agent="Mozilla/5.0 (Windows NT 6.1; Win64; rv:109.0) Gecko/20100101 Firefox/109.0"
+fi
+
+
+
+# Set color
+#
+White='\e[0;37m'
+Black='\e[0;30m'        
+Green='\e[0;32m'        
+Yellow='\e[0;33m'     
+Blue='\e[0;34m' 
+Red='\e[0;31m'          
+Purple='\e[0;35m'     
+Cyan='\e[0;36m'       
+     
+BBlack='\e[1;30m'       # Black
+BRed='\e[1;31m'         # Red
+BGreen='\e[1;32m'       # Green
+BYellow='\e[1;33m'      # Yellow
+BBlue='\e[1;34m'        # Blue
+BPurple='\e[1;35m'      # Purple
+BCyan='\e[1;36m'        # Cyan
+BWhite='\e[1;37m'       # White
+
+# Directory
+dir="$HOME/.bookScraping"
+mkdir $dir/ 2>/dev/null &
+
+# Delete temporary files
+rm $dir/.html_anna* 2>/dev/null &
+rm $dir/temp.html* 2>/dev/null &
+rm $dir/.link_page_anna* 2>/dev/null &
+rm $dir/*.{pdf,fb2,doc,epub,rar,zip,djvu,txt} 2>/dev/null
+
+# scraping anna site
+scraping_fast() {
+	
+	title_book=$(sed -n 's/.*<h3[^>]*class="[^"]*truncate[^"]*text-xl[^"]*font-bold"[^>]*>\(.*\)<\/h3>.*/\1/p' $dir/.html_anna > $dir/.title_book_anna)
+	book_autor=$(sed -n 's/.*<div[^>]*class="[^"]*truncate[^"]*italic"[^>]*>\(.*\)<\/div>.*/\1/p' $dir/.html_anna > $dir/.book_autor_anna)
+	format_book=$(sed -n 's/.*<div[^>]*class="[^"]*text-gray-500[^"]*">\([^<]*\)<\/div>.*/\1/p' $dir/.html_anna > $dir/.format_book_anna)
+	link_pag=$(sed -n 's/^.*<a[^>]*href="\([^"]*\)".*$/\1/p' $dir/.html_anna | sed -n '/md5/p' > $dir/.link_page_ana)
+	link_page=$(cat $dir/.link_page_ana | sed '/\/md5\/${item.md5}/d' > $dir/.link_page_anna)
+	md5=$(cat $dir/.link_page_anna)
+
+	file1="$dir/.title_book_anna"
+	file2="$dir/.book_autor_anna"
+	file3="$dir/.format_book_anna"
+	file4="$dir/.link_page_anna"
+
+# Counter
+line_num=1
+
+	
+while true; do
+
+    # Print the first line of the files
+    echo "$(sed -n "${line_num}p" "${file1}") | $(sed -n "${line_num}p" "${file2}") | $(sed -n "${line_num}p" "${file3}")"
+
+    # Increment the line number
+    line_num=$((line_num+1))
+    
+    # Check if the end of the file has been reached #1
+    if [[ $(sed -n "$=" "${file1}") -lt $line_num ]]; then
+        break
+    fi
+done
+	
+}
+
+
+# User input
+
+user() {
+
+    echo -e $BYellow''
+    read -p "Enter the name of the book to search: " input &&
+    input=${input// /+}
+    wget --user-agent "$agent" -O $dir/.html_anna -q "${anna}${input}${parametros}"
+    scraping_fast > $dir/result
+    echo -e $White''
+}
+
+
+parametros=""
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --version)
+            version_info
+            ;;
+        --update)
+            update_script
+            ;;
+        --help | -h)
+            cat <<- _EOF_
+Available options:
+  --version         Show version information
+  --update          Update the script
+  --help, -h        Show this help message
+  --external_download  Download external resources
+  --lib             Prioritize book searches on libgen 
+  --es              Search in Spanish
+  --en              Search in English
+  --pdf             Search for PDF files
+  --epub            Search for EPUB files
+  --author           Specify the author
+_EOF_
+            exit 0
+            ;;
+        --external_download)
+            parametros="${parametros}&acc=external_download"
+            ;;
+        --lib)
+            parametros="${parametros}&src=lgli"
+            ;;
+        --es)
+            parametros="${parametros}&sort=&lang=es"
+            ;;
+        --en)
+            parametros="${parametros}&sort=&lang=en"
+            ;;
+        --pdf)
+            parametros="${parametros}&ext=pdf"
+            ;;
+        --epub)
+            parametros="${parametros}&ext=epub"
+            ;;
+        --author)
+            if [[ -n "$2" && "$2" != --* ]]; then
+                autor=$(echo "$2" | sed 's/ /+/g')
+                parametros="${parametros}&termtype_1=author&termval_1=${autor}"
+                shift
+            else
+                echo "Error: A value for --author was expected"
+                exit 1
+            fi
+            ;;
+        *)
+            echo "Optión no found: $1"
+            ;;
+    esac
+    shift
+done
+
+user
+
+
+# FZF
+export FZF_DEFAULT_OPTS="--bind='ctrl-x:execute(exit 0)+abort'"
+	
+
+if [ ! -s $dir/.title_book_anna ]; then
+  echo -e $BRed'no found'
+  sleep 2
+  clear
+  exit 1
+fi
+
+# Read the file and save each line to an array
+readarray -t LINES < $dir/result
+
+# Check if the file is empty
+if [ ${#LINES[@]} -eq 0 ]; then
+  echo "No results found."
+  exit 1
+fi
+
+OPTIONS=()
+for i in "${!LINES[@]}"; do
+line_number=$((i+1))
+  OPTIONS+=("$line_number ${LINES[$i]}")
+
+done
+
+# Run FZF and get the user's selection
+OPTION=$(printf '%s\n' "${OPTIONS[@]}" | fzf | awk '{print $1}')
+
+# Validate the user's selection
+if [[ "$OPTION" =~ ^[0-9]+$ && "$OPTION" -ge 0 && "$OPTION" -lt "${#LINES[@]}" ]]; then
+  echo ""
+  namedocument=$(echo "$OPTION: ${LINES[$OPTION-1]}" | sed -n 's/^[^:]*: *\(.*[^ ]\) *|[^|]*|.*/\1/p' | sed 's/[^[:alnum:][:space:]]//g')
+  echo -e $BGreen''
+  echo "Ha seleccionado la opción $((OPTION)): ${LINES[$OPTION-1]}"
+  echo -e $White''
+  
+  # get md5 of the book selected by the user
+  ANOTHER_FILE_LINE=$(sed -n "$((OPTION))p" $dir/.link_page_anna)
+  
+  # get downloads url
+  curl -s -A "$agent" "https://annas-archive.org$ANOTHER_FILE_LINE" | sed -n '/class="js-download-link"/p' | grep -o "href='[^']*'" | sed -e "s/href='\([^']*\)'/\1/" > "$dir/.download_link" || die "Failed get downloads url"
+
+
+
+# Downloads link dowsnt start automatically 
+echo -e ''
+
+echo -e $BYellow'If the download doesnt start automatically, you can open this link in your browser'
+
+cat $dir/.download_link | grep /slow | sed 's|^|https://annas-archive.org|' 2>/dev/null &
+cat $dir/.download_link | grep ht 2>/dev/null &
+cat $dir/.download_link | sed -n '/\.onion/p' 2>/dev/null &
+
+echo -e $White''
+echo ""
+
+# Downloads directory  
+dirdownload=~/Documents
+
+if [[ -d $dirdownload ]]; 
+then
+echo ""
+else 
+	mkdir $dirdownload 
+fi
+
+readarray -t urls < "$dir/.download_link"
+
+for url in "${urls[@]}"; do
+    filename=$(basename "$url")
+    shortname=$(basename "$filename" | cut -c 1-50)
+    extension=$(echo "$filename" | sed 's/.*\.//')
+    
+    if [[ $filename =~ \.(pdf|epub|txt|zip|rar|djvu|fb2|mobi|doc|docx|fb2|cbz|rtf|azw3|azw|cbr)$ ]]; then
+        if wget -nc -P "$dir/" --read-timeout=10 "$url"; then
+            echo -e "$BGreen'Download finished: $dirdownload/$namedocument.$extension'"
+            mv "$dir"/*."$extension" "$dirdownload/"
+            cd "$dirdownload/" && mv *."$extension" "$shortname.$extension" && mv "$shortname.$extension" "$namedocument.$extension"
+            break
+        else
+            echo "Failed to download: $url"  
+        fi
+     
+       
+     elif [[ $url == *libgen.li* ]]; then
+     libgenlink=$(cat $dir/.download_link | sed -n '/^http*:\/\/libgen\.[^\/]*/p')
+	 comandoo=$(wget --user-agent "$agent" -q -O - "$url" | sed -n 's/.*<a[^>]*href="\([^"]*get\.php[^"]*\)".*/\1/p')
+	 
+	 if [ -z "$comandoo" ]; then
+    echo -e $BRed' 1 Error in libgenlink The link could not be extracted to start the automatic download.'
+    break
+fi
+	 
+	 echo ""
+	 echo  -e $BYellow'An attempt is being made to download automatically.'
+	 echo -e $White''
+	
+	 wget  -P "$dirdownload" --user-agent "$agent" --content-disposition --max-redirect=30 "https://libgen.li/""$comandoo"
+	 
+	 if [ $? -ne 0 ]; then
+    echo -e $BRed 'Error could not be downloaded automatically'
+    exit 1
+    else
+    break
+fi
+			
+			
+    fi
+done
+exit 1
+fi

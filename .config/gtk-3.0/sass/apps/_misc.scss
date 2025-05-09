@@ -1,0 +1,403 @@
+/**
+ * Tilix
+ */
+
+overlay > revealer {
+  &.left > scrolledwindow.frame,
+  &.right > scrolledwindow.frame {
+    border-style: none;
+    box-shadow: $shadow-z16;
+  }
+
+  &.left > scrolledwindow.frame {
+    margin-right: 32px;
+  }
+
+  &.right > scrolledwindow.frame {
+    margin-left: 32px;
+  }
+}
+
+.terminix-session-sidebar, // for backward compatibility
+.tilix-session-sidebar {
+  background-image: image($surface-z8);
+}
+
+.terminal-titlebar button {
+  border-radius: 0;
+}
+
+button.image-button.session-new-button {
+  min-width: $medium-size - 4px;
+}
+
+// Remove extra padding
+notebook.tilix-background tab > box > stack {
+  margin: -6px;
+}
+
+button.flat.tilix-small-button {
+  // NOTE: padding is hard-coded with:
+  // padding: 2px 4px;
+  min-height: $small-size - 2px * 2;
+  min-width: $small-size - 4px * 2;
+}
+
+/**
+ * Terminator
+ */
+
+.terminator-terminal-window {
+  paned > separator {
+    background-color: $surface-z0;
+  }
+
+  // this should be fixed by the upstream
+  notebook.frame {
+    border-style: none;
+    background-color: transparent;
+  }
+}
+
+/**
+ * Ubitquity
+ */
+
+#live_installer .menubar progressbar trough {
+  border-radius: 4px; // Adjust to hard-coded progress border-radius
+  background-color: disabled-stroke($on-titlebar);
+}
+
+/**
+ * Eclipse
+ */
+
+window.background > box.vertical > scrolledwindow > widget toolbar {
+  padding: 2px;
+
+  separator,
+  button {
+    margin: 2px;
+  }
+
+  button {
+    border-radius: $corner-radius;
+  }
+}
+
+/**
+ * FileZilla
+ */
+
+window.background > box.vertical > widget > widget > widget > widget > widget > widget > widget > scrolledwindow > widget {
+  > entry {
+    all: unset;
+    padding: 5px;
+    box-shadow: inset 0 0 0 1px $overlay-selected;
+    background-color: $surface-z1;
+  }
+
+  > widget > entry {
+    all: unset;
+    padding: 0 3px 1px;
+    box-shadow: inset 0 0 0 1px $overlay-selected;
+    background-color: $surface-z1;
+  }
+}
+
+/**
+ * Chromium
+ */
+
+window.background.chromium {
+  background-color: $surface-z8;
+
+  // FIXME: There is no way to change the color of the toolbar buttons
+  toolbar button {
+    // color: hint($on-surface);
+  }
+
+  // toolbar's border-bottom refers to button's border
+  // FIXME: Chrome's button border ignores theme's alpha value :(
+  entry,
+  > button {
+    border: 1px solid stroke($on-surface);
+  }
+
+  > button {
+    color: $primary;
+
+    &:disabled {
+      color: disabled-hint($on-surface);
+    }
+  }
+
+  menubar,
+  headerbar {
+    color: hint($on-titlebar);
+  }
+
+  // Workaround for non-animatable buttons in headerbar
+  headerbar button:active {
+    background-color: overlay("pressed", $on-titlebar);
+  }
+
+  // For text field
+  textview.view {
+    background-color: transparent;
+  }
+
+  // For prominent button, starred icon, etc.
+  treeview.view.cell:selected:focus {
+    background-color: $primary;
+    color: $on-primary;
+  }
+
+  // For table header
+  treeview.view button {
+    border: 1px solid stroke($on-surface);
+    background-color: $surface-z1; // FIXME: This should not be necessary
+    // color: hint($on-surface);
+  }
+}
+
+tooltip.background.chromium {
+  background-color: rgba($tooltip, 1);
+}
+
+/**
+ * Firefox
+ */
+
+#MozillaGtkWidget {
+  > widget {
+    // For popover, entry in toolbar, etc.
+    text {
+      background-color: $surface-z8;
+    }
+
+    // For selection, active tab indicator, etc.
+    text:selected {
+      // Use traditional selection style as workaround
+      background-color: $primary;
+      color: $on-primary;
+    }
+
+    // For separators in bookmark toolbar
+    > separator {
+      color: divider($on-surface);
+    }
+
+    // avoid black border
+    > scrollbar {
+      // background-clip: border-box;
+    }
+
+    // Emphasize toolbar's border-bottom
+    > frame > border {
+      // FIXME: On Wayland, translucent colors don't work well here.
+      // See: https://github.com/nana-4/materia-theme/issues/467
+      border-color: opacify(stroke($on-surface), $surface-z0);
+    }
+
+    > entry,
+    > button > button {
+      border: 1px solid stroke($on-surface);
+      border-radius: $corner-radius;
+      box-shadow: none;
+
+      &:disabled {
+        border-color: disabled-stroke($on-surface);
+      }
+    }
+
+    > entry {
+      min-height: 32px - 2px;
+      background-color: $surface-z1;
+
+      &:focus {
+        border-color: $primary;
+        box-shadow: inset 0 0 0 1px $primary;
+      }
+
+      &:disabled {
+        background-color: $surface-z1;
+      }
+    }
+
+    > button > button {
+      padding: 4px 8px;
+
+      &:active {
+        background-size: 1000% 1000%;
+      }
+    }
+
+    // use 16px assets for hard-coded sizing
+    > checkbutton > check {
+      @extend %small_check;
+    }
+
+    > radiobutton > radio {
+      @extend %small_radio;
+    }
+
+    > checkbutton > check,
+    > radiobutton > radio {
+      margin: 0;
+      padding: 0;
+    }
+
+    // make check/radio visible regardless of whether the background is bright or dark
+    > checkbutton > check:not(:checked):not(:indeterminate),
+    > radiobutton > radio:not(:checked):not(:indeterminate) {
+      color: $grey-600;
+
+      &:disabled {
+        color: rgba($grey-600, .5);
+      }
+    }
+  }
+
+  // remove ugly border around the menus
+  menu {
+    // FIXME: The ugly border is still needed, since the menu doesn't
+    // draw its drop shadow in some environments. See:
+    // https://github.com/nana-4/materia-theme/issues/462
+
+    // border: none;
+  }
+
+  // Workaround: Firefox doesn't properly read color from
+  // menuitem:disabled, but from menuitem label:disabled.
+  menuitem label:disabled {
+    color: disabled($on-surface);
+  }
+}
+
+// for backward compatibility
+#MozillaGtkWidget {
+  > widget {
+    > menubar {
+      color: hint($on-titlebar);
+
+      &:hover {
+        color: $on-titlebar;
+      }
+
+      &:disabled {
+        color: disabled-hint($on-titlebar);
+      }
+    }
+
+    > frame {
+      color: stroke($on-surface);
+    }
+  }
+
+  menu > separator {
+    color: divider($on-surface);
+  }
+}
+
+/**
+ * Inkscape
+ */
+
+#ToolboxCommon {
+  > #AuxToolbox {
+    #StyleSwatch {
+      font-size: smaller;
+    }
+
+    #Kludge {
+      padding: 0;
+    }
+
+    spinbutton,
+    entry {
+      min-height: 32px;
+    }
+
+    button:not(.up):not(.down) {
+      min-height: 24px;
+      min-width: 16px;
+      padding: 4px 8px;
+      border-radius: $corner-radius;
+    }
+
+    spinbutton button {
+      border-width: 4px;
+    }
+  }
+
+  > toolbar.vertical {
+    margin-top: -4px;
+
+    button {
+      min-height: 24px;
+      min-width: 24px;
+      padding: 4px;
+      border-radius: $corner-radius;
+    }
+  }
+}
+
+#CanvasTable {
+  button {
+    min-height: 16px;
+    min-width: 16px;
+    padding: 0;
+    border-radius: 0;
+    @extend %button-flat-activatable;
+  }
+
+  #HorizontalScrollbar {
+    border-top: 1px solid divider($on-surface);
+  }
+
+  #VerticalScrollbar {
+    &:dir(ltr) {
+      border-left: 1px solid divider($on-surface);
+    }
+
+    &:dir(rtl) {
+      border-right: 1px solid divider($on-surface);
+    }
+  }
+}
+
+#Canvas_and_Dock {
+  frame > border {
+    border: none;
+    background-color: transparent;
+  }
+
+  // each canvases' titlebar
+  widget > widget {
+    > button.flat {
+      min-height: 16px;
+      min-width: 16px;
+      padding: 4px;
+    }
+
+    > box.horizontal image {
+      padding: 4px;
+    }
+  }
+
+  // vertical dock buttons
+  box.horizontal > box.vertical > button.flat {
+    min-height: 16px;
+    min-width: 24px;
+    padding: 8px 4px;
+  }
+}
+
+/**
+ * Synapse
+ */
+
+box.vertical > widget > widget:selected {
+  background-color: $overlay-selected;
+}

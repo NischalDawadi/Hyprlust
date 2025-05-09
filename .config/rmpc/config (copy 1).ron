@@ -1,0 +1,170 @@
+#![enable(implicit_some)]
+#![enable(unwrap_newtypes)]
+#![enable(unwrap_variant_newtypes)]
+(
+address: "127.0.0.1:6600",
+on_song_change: ["~/.config/rmpc/notify"],
+theme: Some("wallust"), // here!
+cache_dir: Some("/home/hypr/.cache/rmpc/"),
+
+volume_step: 5,
+status_update_interval_ms: 1000,
+wrap_navigation: false,
+enable_mouse: true,
+album_art: (
+method: Auto,
+max_size_px: (width: 600, height: 600),
+),
+keybinds: (
+global: {
+":": CommandMode,
+"3": ArtistsTab,
+",": VolumeDown,
+"s": Stop,
+".": VolumeUp,
+"c": ToggleSingle,
+"1": QueueTab,
+"6": SearchTab,
+"": NextTab,
+"": NextTab,
+"5": PlaylistsTab,
+"": PreviousTab,
+"": PreviousTab,
+"q": Quit,
+"4": AlbumsTab,
+"x": ToggleRandom,
+">": NextTrack,
+"<": PreviousTrack,
+"f": SeekForward,
+"v": ToggleConsume,
+"2": DirectoriesTab,
+"p": TogglePause,
+"z": ToggleRepeat,
+"b": SeekBack,
+"~": ShowHelp,
+"O": ShowOutputs,
+},
+navigation: {
+"": UpHalf,
+"N": PreviousResult,
+"a": Add,
+"r": Rename,
+"n": NextResult,
+"g": Top,
+"": Select,
+"G": Bottom,
+"h": Left,
+"": Confirm,
+"i": FocusInput,
+"J": MoveDown,
+"j": Down,
+"": DownHalf,
+"/": EnterSearch,
+"": Close,
+"": Close,
+"K": MoveUp,
+"l": Right,
+"D": Delete,
+"k": Up,
+},
+
+    queue: {
+        "D":       DeleteAll,
+        "<CR>":    Play,
+        "<C-s>":   Save,
+        "a":       AddToPlaylist,
+        "d":       Delete,
+        "i":       ShowInfo,
+                },
+                   ),
+ tabs: [
+         (
+
+            name: "Directories",
+
+            border_type: None,
+
+            pane: Pane(Directories),
+
+        ),
+
+        (
+
+            name: "Artists",
+
+            border_type: None,
+
+            pane: Pane(Artists),
+
+        ),
+
+        (
+
+            name: "Album Artists",
+
+            border_type: None,
+
+            pane: Pane(AlbumArtists),
+
+        ),
+
+        (
+
+            name: "Albums",
+
+            border_type: None,
+
+            pane: Pane(Albums),
+
+        ),
+
+        (
+
+            name: "Playlists",
+
+            border_type: None,
+
+            pane: Pane(Playlists),
+
+        ),
+
+        (
+
+            name: "Search",
+
+            border_type: None,
+
+            pane: Pane(Search),
+
+        ),
+    (
+        name: "Queue",
+        border_type: None,
+        pane: Split(
+            direction: Horizontal,
+            panes: [
+                (
+                    size: "40%",
+                    pane: Split(
+                        direction: Vertical,
+                        panes: [
+                            (
+                                size: "14%",
+                                pane: Pane(Lyrics),
+                            ),
+                            (
+                                size: "86%",
+                                pane: Pane(AlbumArt),
+                            )
+                        ]
+                    ),
+                ),
+                (
+                    size: "60%",
+                    pane: Pane(Queue),
+                       ),
+                ],
+            ),
+        ),
+],
+)

@@ -1,0 +1,38 @@
+set database "sqlite"
+set recolor "false"
+set recolor-keephue "true"
+set completion-bg "{{background}}"
+set completion-fg "{{foreground}}"
+set completion-group-bg "{{background}}"
+set completion-group-fg "{{foreground}}"
+set completion-highlight-bg "{{foreground}}"
+set completion-highlight-fg "{{background}}"
+
+set recolor-lightcolor "{{background}}"
+set recolor-darkcolor "{{foreground}}"
+set default-bg "{{background| lighten(0.5)}}"
+set default-fg "{{foreground}}"
+set inputbar-bg "{{background}}"
+set inputbar-fg "{{foreground}}"
+set notification-bg "{{background}}"
+set notification-fg "{{foreground}}"
+set notification-error-bg "{{color1}}"
+set notification-error-fg "{{foreground}}"
+set notification-warning-bg "{{color1}}"
+set notification-warning-fg "{{foreground}}"
+set statusbar-bg "{{background| lighten(0.3)}}"
+set statusbar-fg "{{foreground| blend("#eeeeee")}}"
+set index-bg "{{color2}}"
+set index-fg "{{foreground}}"
+set index-active-bg "{{foreground}}"
+set index-active-fg "{{background}}"
+set render-loading-bg "{{background}}"
+set render-loading-fg "{{foreground}}"
+
+set window-title-home-tilde true
+set statusbar-basename true
+set selection-clipboard clipboard
+
+map i recolor 
+set adjust-open "best-fit"
+

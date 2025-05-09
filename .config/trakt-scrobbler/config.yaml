@@ -1,0 +1,8 @@
+
+players:
+    monitored: [mpv]
+
+
+fileinfo:
+    whitelist: [/home/hypr/Downloads, 'http://127.0.0.1:11470/*']
+version: '1.0'

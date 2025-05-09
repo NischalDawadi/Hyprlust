@@ -1,0 +1,176 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+/*DARK_PURPLE*/
+
+
+@import '../../.config/waybar/wallust/colors-waybar.css';
+
+@define-color main-color @color15;
+* {
+  all: unset; /*this is really important to isolate waybar from gtk*/
+  font: bold 14px "Iosevka Nerd Font Propo" ;
+   font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+  border: none;
+  
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+
+window#waybar {
+
+  /*background: alpha(@background, 0.1);*/
+      background: rgba (0, 0, 0, 0.6);
+  border-radius: 5px;
+  /*border: 0px solid alpha(@background,0.8);*/
+}
+
+#window {
+  padding: 0px 8px;
+  margin: 5px 4px 5px 4px;
+  background: alpha(@color12, 0.3);
+  border-radius: 5px;
+  color: lighter(@main-color);
+}
+
+tooltip {
+  background: alpha(@background, 0.8);
+  border: 2px solid alpha(lighter(@main-color), 0.8);
+  border-radius: 10px;
+}
+
+tooltip label {
+  color: @freground;
+}
+
+#custom-arrow-right {
+  color: @main-color;
+  margin: 0px 4px;
+}
+
+#cpu,
+#memory,
+#temperature,
+#disk,
+#custom-updates {
+  padding: 0px 6px;
+  margin: 6px 4px;
+  background: alpha(darker(@main-color), 0.4);
+  color: @main-color;
+  border-radius: 10px;
+}
+
+#workspaces {
+  margin: 4px 4px;
+  background: alpha(lighter(@color4), 0.09);
+  border-radius: 5px;
+}
+
+#workspaces button {
+  padding: 0px 4px;
+  margin: 0px 0px;
+  color: alpha(@foreground, 0.3);
+}
+
+#workspaces button.active {
+  transition: color 0.5s;
+  color: lighter(@main-color);
+
+}
+
+
+#workspaces button.urgent,
+#workspaces button:hover {
+  color: @color12;
+  background-color: transparent;
+}
+#demo,
+#control-center {
+  padding: 0px 6px;
+  margin: 4px 2px 4px 2px ;
+  color: lighter(@color3);
+  background: alpha(lighter(@main-color),0.08);
+  border-radius: 5px;
+}
+
+#bluetooth,
+#network,
+#pulseaudio {
+  padding: 0px 0 0 4px;
+}
+
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+#pulseaudio-slider {
+  margin: 6px;
+}
+
+#pulseaudio-slider highlight {
+  border-radius: 8px;
+  background-color: lighter(@main-color);
+}
+
+#language {
+  padding: 0px 3px 2px 0px;
+}
+
+#custom-arrow-left {
+  color: lighter(@main-color);
+  margin: 0px 4px;
+}
+
+#custom-notifications,
+#custom-weather,
+#custom-theme-switcher {
+  padding: 0px 8px;
+  margin: 8px 4px;
+  color: @main-color;
+  background: alpha(darker(@main-color), 0.8);
+  border-radius: 10px;
+}
+#tray {
+  padding: 0px 8px;
+    margin: 4px 2px 4px 2px;
+  background: alpha(@color12,0.3);
+  border-radius: 5px;
+  color: lighter(@main-color);
+}
+
+#custom-menu,
+#custom-power {
+  padding: 0px 8px;
+  margin: 6px 6px 6px 4px;
+  background: alpha(@color12,0.3);
+  border-radius: 5px;
+  color: lighter(@main-color);
+}
+
+
+#clock {
+  padding: 0px 8px;
+  margin: 5px 2px 5px 4px;
+  background: alpha(@color12,0.3);
+  border-radius: 5px;
+  color: lighter(@main-color);
+}
+
+#power,
+#bluetooth,
+
+
+#mpd,
+#pulseaudio,
+
+#battery,
+
+
+#mpris{
+ padding: 4px 4px;
+  color: lighter(@main-color);
+}

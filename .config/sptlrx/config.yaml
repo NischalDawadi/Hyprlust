@@ -1,0 +1,52 @@
+cookie: ""
+player: mpd
+mpd:
+  address: 127.0.0.1:6600
+
+host: lyricsapi.vercel.app
+ignoreErrors: true
+timerInterval: 200
+updateInterval: 2000
+style:
+  hAlignment: center
+  before:
+    background: ""
+    foreground: ""
+    bold: true
+    italic: false
+    underline: false
+    strikethrough: false
+    blink: false
+    faint: false
+  current:
+    background: ""
+    foreground: ""
+    bold: true
+    italic: false
+    underline: false
+    strikethrough: false
+    blink: false
+    faint: false
+  after:
+    background: ""
+    foreground: ""
+    bold: false
+    italic: false
+    underline: false
+    strikethrough: false
+    blink: false
+    faint: true
+pipe:
+  length: 0
+  overflow: word
+mpd:
+  address: 127.0.0.1:6600
+  password: ""
+mopidy:
+  address: 127.0.0.1:6680
+mpris:
+  players: []
+browser:
+  port: 8974
+local:
+  folder: ""

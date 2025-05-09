@@ -1,0 +1,134 @@
+@theme "~/.config/rofi/wallust/colors-rofi.rasi"
+
+configuration {
+    modi:                        "drun";
+    font:                        "JetBrains Mono Nerd Font 12";
+    show-icons:                  true;
+    drun-display-format:         "{name}";
+    hover-select:                true;
+    me-select-entry:             "MouseSecondary";
+    me-accept-entry:             "MousePrimary";
+    window-format:               "{w} · {c} · {t}";
+    dpi:                         1;
+}
+
+* {
+    background-alt:              @selected-active-background; // Buttons background
+    selected:                    @selected-normal-background; // Button selected
+    active:                      @selected-urgent-background; // Window activated
+    urgent:                      @selected-normal-background; // When hovering the activated window (maybe more?)
+    text-selected:               @selected-active-background;
+    text-color:                  @foreground;
+    border-color:                @selected;
+}
+
+
+window {
+    enabled:                     true;
+    fullscreen:                  false;
+    transparency:                "real";
+    cursor:                      "default";
+    spacing:                     0px;
+    border-radius:               10px;
+    location:                    center;
+    anchor:                      center;
+    width:                       75%;
+    background-color:            #0000001a;
+    border:                      2px;
+    border-color:                rgba(0, 0, 0, 0.3);
+}
+
+mainbox {
+    enabled:                     true;
+    children:                    [ "inputbar", "listview"  ];
+    background-color:            transparent;
+}
+
+inputbar {
+    enabled:                      true;
+    text-color:                   #ffffff4d;
+    background-color:             transparent;
+    padding:                      5px;
+    margin:                       10px;
+    children:                     [ "entry" ];
+}
+
+entry {
+    enabled:                      true;
+    text-color:                   inherit;
+    background-color:             transparent;
+}
+
+listview {
+    enabled:                     true;
+    columns:                     5; /* Number of elements in a row */
+    lines:                       1; /* One row */
+    padding:                     26px 36px;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical; /* Vertical arrangement */
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+
+    background-color:            transparent;
+    spacing:                     20px;
+    
+    border:                      0px;
+}
+
+element {
+    enabled:                     true;
+    orientation:                 vertical; /* Vertical arrangement */
+    expand:                      false;
+    spacing:                     0px;
+    padding:                     5px 10px;
+    border-radius:               10px;
+    cursor:                      pointer;
+    background-color:            #00000000;
+}
+
+element normal.normal {
+    background-color:            #00000033;
+    text-color:                  inherit;
+}
+element normal.urgent {
+    background-color:            #00000000;
+    text-color:                  @foreground;
+}
+element normal.active {
+    background-color:            #00000000;
+    text-color:                  @foreground;
+}
+
+element selected.normal {
+    background-color:            #00000080;
+    text-color:                  @text-selected;
+}
+element alternate.normal {
+    background-color:            #00000033;
+    text-color:                  inherit;
+}
+element alternate.urgent {
+    background-color:            #00000000;
+    text-color:                  inherit;
+}
+element alternate.active {
+    background-color:            #00000000;
+    text-color:                  inherit;
+}
+
+element-icon {
+    size:                        50%;
+    cursor:                      inherit;
+    expand:                      false;
+    padding:                     0px;
+    background-color:            #00000000;
+}
+
+element-text {
+    cursor:                      inherit;
+    background-color:            transparent;
+    padding-left:                10px; /* Add padding to the left of the text */
+}

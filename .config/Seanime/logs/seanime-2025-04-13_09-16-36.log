@@ -1,0 +1,241 @@
+2025-04-13 09:16:36 |INF| app > Seanime 2.8.0-Hachi
+2025-04-13 09:16:36 |INF| app > OS: linux
+2025-04-13 09:16:36 |INF| app > Arch: amd64
+2025-04-13 09:16:36 |INF| app > Processor count: 6
+2025-04-13 09:16:36 |DBG| app > Initializing config
+2025-04-13 09:16:36 |TRC| app > Overriding default data directory dataDir=/home/hypr/.config/Seanime
+2025-04-13 09:16:36 |INF| app > Version change detected current=2.8.0 prev=2.7.5
+2025-04-13 09:16:36 |INF| app > Data directory: /home/hypr/.config/Seanime
+2025-04-13 09:16:36 |INF| app > Working directory: /home/hypr/.local/bin
+2025-04-13 09:16:36 |INF| db > Database instantiated name=seanime.db
+2025-04-13 09:16:36 |DBG| db > Local files retrieved
+2025-04-13 09:16:36 |DBG| extensions > Loaded built-in manga provider extension id=comick
+2025-04-13 09:16:36 |DBG| extensions > Loaded built-in manga provider extension id=comick-multi
+2025-04-13 09:16:36 |DBG| extensions > Loaded built-in manga provider extension id=mangapill
+2025-04-13 09:16:36 |DBG| extensions > Loaded built-in manga provider extension id=weebcentral
+2025-04-13 09:16:36 |DBG| extensions > Loaded built-in manga provider extension id=mangadex
+2025-04-13 09:16:36 |DBG| extensions > Loaded built-in manga provider extension id=manganato
+2025-04-13 09:16:36 |INF| local platform > Database instantiated name=local.db
+2025-04-13 09:16:36 |INF| continuity > Initialized manager
+2025-04-13 09:16:36 |DBG| app > Refreshing modules
+2025-04-13 09:16:36 |TRC| goja runtime > Pre-warming pool size=5
+2025-04-13 09:16:36 |DBG| manga downloader > Reading download directory
+2025-04-13 09:16:36 |TRC| ws > Sending message type=refreshed-manga-download-data
+2025-04-13 09:16:36 |TRC| torrent repo > Setting settings
+2025-04-13 09:16:36 |INF| discordrpc > Discord Rich Presence enabled
+2025-04-13 09:16:36 |ERR| discordrpc > rich presence enabled but failed to create discord rpc client error="dial unix /run/user/1001/discord-ipc-0: connect: no such file or directory"
+2025-04-13 09:16:36 |ERR| app > Failed to login to qBittorrent error="Post \"http://127.0.0.1:8081/api/v2/auth/login\": dial tcp 127.0.0.1:8081: connect: connection refused"
+2025-04-13 09:16:36 |INF| watcher > Watching directories: [Anime]
+2025-04-13 09:16:36 |INF| watcher > Library size: 3.1 GB
+2025-04-13 09:16:36 |DBG| extensions > Loaded built-in onlinestream provider extension id=animepahe
+2025-04-13 09:16:36 |DBG| extensions > Loaded built-in anime torrent provider extension id=nyaa
+2025-04-13 09:16:36 |DBG| extensions > Loaded built-in anime torrent provider extension id=nyaa-sukebei
+2025-04-13 09:16:36 |DBG| extensions > Loaded built-in anime torrent provider extension id=animetosho
+2025-04-13 09:16:36 |DBG| extensions > Loaded built-in anime torrent provider extension id=seadex
+2025-04-13 09:16:36 |TRC| extensions > Loading external extensions
+2025-04-13 09:16:36 |TRC| extensions > Killing Goja VMs
+2025-04-13 09:16:36 |DBG| extensions > Killed Goja VMs
+2025-04-13 09:16:36 |TRC| extensions > Unloading external extensions
+2025-04-13 09:16:36 |DBG| extensions > Unloaded external extensions
+2025-04-13 09:16:36 |DBG| extensions > Loaded external extensions
+2025-04-13 09:16:36 |TRC| ws > Sending message type=extensions-reloaded
+2025-04-13 09:16:36 |INF| app > Refreshed modules
+2025-04-13 09:16:36 |DBG| manga > Initialized provider extension bank
+2025-04-13 09:16:36 |DBG| onlinestream > Initialized provider extension bank
+2025-04-13 09:16:36 |DBG| torrent repo > Initialized anime provider extension bank
+2025-04-13 09:16:36 |DBG| app > Fetching Anilist data
+2025-04-13 09:16:36 |INF| app > Authenticated to AniList
+2025-04-13 09:16:36 |INF| app > Fetched Anilist data
+2025-04-13 09:16:36 |DBG| anilist > Fetching anime collection
+2025-04-13 09:16:36 |DBG| transcoder > Hardware acceleration: vaapi
+2025-04-13 09:16:36 |INF| transcoder > Initialized
+2025-04-13 09:16:36 |INF| mediastream > Transcoder module initialized
+2025-04-13 09:16:36 |INF| mediastream > Module initialized
+2025-04-13 09:16:36 |INF| torrentstream > Initialized torrent client on port 43213
+2025-04-13 09:16:36 |TRC| torrentstream > Dropping all torrents
+2025-04-13 09:16:36 |DBG| torrentstream > Dropped all torrents
+2025-04-13 09:16:36 |INF| torrentstream > Module initialized
+2025-04-13 09:16:36 |INF| app > Serving embedded web interface
+2025-04-13 09:16:36 |INF| app > Manga downloads path: /home/hypr/.config/Seanime/manga
+2025-04-13 09:16:36 |INF| app > Offline assets path: /home/hypr/.config/Seanime/offline/assets
+2025-04-13 09:16:36 |INF| app > Server Address: 0.0.0.0:43211
+2025-04-13 09:16:36 |DBG| animetosho > Loaded Sneedex Nyaa IDs count=1442
+2025-04-13 09:16:36 |INF| app > Seanime started at :43211
+2025-04-13 09:16:37 |DBG| ws > Client connected id=84c45bce-1989-45e5-aca9-75630a5194b7
+2025-04-13 09:16:38 |WRN| anilist > Successful Request (slow) rlr=86 rtt=2.077s
+2025-04-13 09:16:38 |TRC| ws > Sending message type=anilist-data-loaded
+2025-04-13 09:16:38 |DBG| anilist > Fetching manga collection
+2025-04-13 09:16:38 |TRC| method=GET status=200 uri=/api/v1/status latency_human=2.702974ms
+2025-04-13 09:16:38 |DBG| anilist > Fetching manga collection
+2025-04-13 09:16:38 |TRC| method=GET status=200 uri=/api/v1/continuity/history latency_human="601.134µs"
+2025-04-13 09:16:38 |DBG| anilist > Fetching manga collection
+2025-04-13 09:16:38 |TRC| method=GET status=200 uri=/api/v1/library/collection latency_human=5.330938ms
+2025-04-13 09:16:38 |TRC| method=GET status=200 uri=/api/v1/library/missing-episodes latency_human=2.239849ms
+2025-04-13 09:16:38 |TRC| method=GET status=200 uri=/api/v1/auto-downloader/items latency_human="462.147µs"
+2025-04-13 09:16:38 |TRC| method=GET status=200 uri=/api/v1/anilist/collection latency_human=4.590747ms
+2025-04-13 09:16:38 |TRC| method=GET status=200 uri=/api/v1/latest-update latency_human=361.524905ms
+2025-04-13 09:16:39 |WRN| anilist > Successful Request (slow) rlr=85 rtt=1.307s
+2025-04-13 09:16:39 |WRN| anilist > Successful Request (slow) rlr=84 rtt=1.269s
+2025-04-13 09:16:39 |WRN| anilist > Long Request rlr=82 rtt=1.258s
+2025-04-13 09:16:39 |TRC| method=GET status=200 uri=/api/v1/manga/collection latency_human=1.272045922s
+2025-04-13 09:16:39 |TRC| method=POST status=200 uri=/api/v1/anilist/list-anime latency_human=1.261315252s
+2025-04-13 09:16:39 |WRN| anilist > Successful Request (slow) rlr=83 rtt=1.27s
+2025-04-13 09:16:50 |TRC| method=GET status=200 uri=/api/v1/library/missing-episodes latency_human="402.922µs"
+2025-04-13 09:16:50 |TRC| method=GET status=200 uri=/api/v1/anilist/collection latency_human=5.934586ms
+2025-04-13 09:16:51 |ERR| method=GET status=200 error="code=404, message=Not Found" uri=/api/v1/manga/chapter-counts latency_human="12.991µs"
+2025-04-13 09:16:51 |TRC| method=GET status=200 uri=/api/v1/manga/collection latency_human="947.344µs"
+2025-04-13 09:16:51 |TRC| method=GET status=200 uri=/api/v1/library/missing-episodes latency_human="199.959µs"
+2025-04-13 09:16:56 |TRC| method=POST status=200 uri=/api/v1/anilist/list-anime latency_human="393.003µs"
+2025-04-13 09:16:57 |DBG| ws > Client disconnection id=84c45bce-1989-45e5-aca9-75630a5194b7
+2025-04-13 09:16:57 |WRN| anilist > Long Request rlr=81 rtt=1.03s
+2025-04-13 09:16:57 |ERR| method=POST status=200 error="write tcp 127.0.0.1:43211->127.0.0.1:34046: write: broken pipe" uri=/api/v1/anilist/list-recent-anime latency_human=1.033039409s
+2025-04-13 09:16:57 |TRC| method=GET status=200 uri=/api/v1/status latency_human=1.151563ms
+2025-04-13 09:16:57 |DBG| ws > Client connected id=84c45bce-1989-45e5-aca9-75630a5194b7
+2025-04-13 09:16:58 |TRC| method=GET status=200 uri=/api/v1/manga/collection latency_human=1.387701ms
+2025-04-13 09:16:58 |TRC| method=GET status=200 uri=/api/v1/extensions/list latency_human="677.053µs"
+2025-04-13 09:16:58 |TRC| method=GET status=200 uri=/api/v1/extensions/plugin-settings latency_human="566.562µs"
+2025-04-13 09:16:58 |TRC| method=GET status=200 uri=/api/v1/extensions/list/development latency_human="44.21µs"
+2025-04-13 09:16:58 |TRC| method=GET status=200 uri=/api/v1/latest-update latency_human="108.884µs"
+2025-04-13 09:16:58 |TRC| method=POST status=200 uri=/api/v1/anilist/list-anime latency_human="683.199µs"
+2025-04-13 09:16:58 |TRC| method=GET status=200 uri=/api/v1/library/collection latency_human="485.615µs"
+2025-04-13 09:16:58 |TRC| method=GET status=200 uri=/api/v1/library/missing-episodes latency_human="358.013µs"
+2025-04-13 09:16:58 |TRC| method=GET status=200 uri=/api/v1/auto-downloader/items latency_human="228.735µs"
+2025-04-13 09:16:58 |TRC| method=GET status=200 uri=/api/v1/anilist/collection latency_human=3.402726ms
+2025-04-13 09:16:58 |WRN| anilist > Long Request rlr=80 rtt=959ms
+2025-04-13 09:16:58 |TRC| method=POST status=200 uri=/api/v1/anilist/list-recent-anime latency_human=963.552977ms
+2025-04-13 09:17:08 |TRC| anilist platform > Fetching raw manga collection
+2025-04-13 09:17:08 |TRC| anilist platform > Returning raw manga collection from cache
+2025-04-13 09:17:08 |DBG| anilist > Fetching stats
+2025-04-13 09:17:08 |TRC| method=GET status=200 uri=/api/v1/anilist/collection/raw latency_human=2.79782ms
+2025-04-13 09:17:08 |TRC| method=GET status=200 uri=/api/v1/manga/anilist/collection/raw latency_human=2.193962ms
+2025-04-13 09:17:09 |INF| anilist > Successful Request rlr=89 rtt=655ms
+2025-04-13 09:17:09 |TRC| method=GET status=200 uri=/api/v1/anilist/stats latency_human=656.482585ms
+2025-04-13 09:17:12 |TRC| anilist platform > Fetching anime details
+2025-04-13 09:17:12 |DBG| anilist > Fetching anime details mediaId=176301
+2025-04-13 09:17:13 |INF| anilist > Successful Request rlr=88 rtt=680ms
+2025-04-13 09:17:13 |TRC| method=GET status=200 uri=/api/v1/anilist/media-details/176301 latency_human=682.157381ms
+2025-04-13 09:17:13 |TRC| method=GET status=200 uri=/api/v1/library/anime-entry/176301 latency_human=838.639616ms
+2025-04-13 09:17:13 |TRC| method=GET status=200 uri=/api/v1/continuity/history latency_human="103.437µs"
+2025-04-13 09:17:22 |TRC| method=POST status=200 uri=/api/v1/anilist/list-anime latency_human="408.578µs"
+2025-04-13 09:17:22 |TRC| method=GET status=200 uri=/api/v1/continuity/history latency_human="29.613µs"
+2025-04-13 09:17:22 |TRC| method=GET status=200 uri=/api/v1/library/collection latency_human="558.67µs"
+2025-04-13 09:17:32 |WRN| anilist > Long Request rlr=87 rtt=722ms
+2025-04-13 09:17:32 |TRC| method=POST status=200 uri=/api/v1/anilist/list-anime latency_human=723.752774ms
+2025-04-13 09:17:47 |TRC| anilist platform > Fetching anime
+2025-04-13 09:17:47 |DBG| anilist > Fetching anime mediaId=19
+2025-04-13 09:17:47 |TRC| anilist platform > Fetching anime details
+2025-04-13 09:17:47 |DBG| anilist > Fetching anime details mediaId=19
+2025-04-13 09:17:47 |INF| anilist > Successful Request rlr=86 rtt=351ms
+2025-04-13 09:17:48 |TRC| method=GET status=200 uri=/api/v1/library/anime-entry/19 latency_human=940.141426ms
+2025-04-13 09:17:48 |WRN| anilist > Successful Request (slow) rlr=85 rtt=1.043s
+2025-04-13 09:17:48 |TRC| method=GET status=200 uri=/api/v1/anilist/media-details/19 latency_human=1.044563s
+2025-04-13 09:17:48 |TRC| method=GET status=200 uri=/api/v1/continuity/history latency_human="33.385µs"
+2025-04-13 09:19:45 |DBG| ws > Client disconnection id=84c45bce-1989-45e5-aca9-75630a5194b7
+2025-04-13 09:26:36 |DBG| anilist > Fetching anime collection
+2025-04-13 09:26:39 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.534s
+2025-04-13 09:26:39 |DBG| anilist > Fetching manga collection
+2025-04-13 09:26:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.321s
+2025-04-13 09:36:36 |DBG| anilist > Fetching anime collection
+2025-04-13 09:36:39 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.55s
+2025-04-13 09:36:39 |DBG| anilist > Fetching manga collection
+2025-04-13 09:36:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.336s
+2025-04-13 09:46:36 |DBG| anilist > Fetching anime collection
+2025-04-13 09:46:38 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.316s
+2025-04-13 09:46:38 |DBG| anilist > Fetching manga collection
+2025-04-13 09:46:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.729s
+2025-04-13 09:56:36 |DBG| anilist > Fetching anime collection
+2025-04-13 09:56:38 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.099s
+2025-04-13 09:56:38 |DBG| anilist > Fetching manga collection
+2025-04-13 09:56:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.599s
+2025-04-13 10:06:36 |DBG| anilist > Fetching anime collection
+2025-04-13 10:06:39 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.864s
+2025-04-13 10:06:39 |DBG| anilist > Fetching manga collection
+2025-04-13 10:06:39 |INF| anilist > Successful Request rlr=88 rtt=469ms
+2025-04-13 10:16:36 |DBG| anilist > Fetching anime collection
+2025-04-13 10:16:36 |TRC| ws > Sending message type=check-for-updates
+2025-04-13 10:16:39 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.552s
+2025-04-13 10:16:39 |DBG| anilist > Fetching manga collection
+2025-04-13 10:16:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.518s
+2025-04-13 10:26:36 |DBG| anilist > Fetching anime collection
+2025-04-13 10:26:38 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.396s
+2025-04-13 10:26:38 |DBG| anilist > Fetching manga collection
+2025-04-13 10:26:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.343s
+2025-04-13 10:36:36 |DBG| anilist > Fetching anime collection
+2025-04-13 10:36:39 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.694s
+2025-04-13 10:36:39 |DBG| anilist > Fetching manga collection
+2025-04-13 10:36:39 |INF| anilist > Successful Request rlr=88 rtt=452ms
+2025-04-13 10:46:36 |DBG| anilist > Fetching anime collection
+2025-04-13 10:46:39 |WRN| anilist > Successful Request (slow) rlr=89 rtt=3.161s
+2025-04-13 10:46:39 |DBG| anilist > Fetching manga collection
+2025-04-13 10:46:41 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.412s
+2025-04-13 10:56:36 |DBG| anilist > Fetching anime collection
+2025-04-13 10:56:39 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.725s
+2025-04-13 10:56:39 |DBG| anilist > Fetching manga collection
+2025-04-13 10:56:41 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.897s
+2025-04-13 11:06:36 |DBG| anilist > Fetching anime collection
+2025-04-13 11:06:38 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.308s
+2025-04-13 11:06:38 |DBG| anilist > Fetching manga collection
+2025-04-13 11:06:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.582s
+2025-04-13 11:16:36 |DBG| anilist > Fetching anime collection
+2025-04-13 11:16:36 |TRC| ws > Sending message type=check-for-updates
+2025-04-13 11:16:38 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.452s
+2025-04-13 11:16:38 |DBG| anilist > Fetching manga collection
+2025-04-13 11:16:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.256s
+2025-04-13 11:26:36 |DBG| anilist > Fetching anime collection
+2025-04-13 11:26:39 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.654s
+2025-04-13 11:26:39 |DBG| anilist > Fetching manga collection
+2025-04-13 11:26:39 |INF| anilist > Successful Request rlr=88 rtt=465ms
+2025-04-13 11:36:36 |DBG| anilist > Fetching anime collection
+2025-04-13 11:36:38 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.105s
+2025-04-13 11:36:38 |DBG| anilist > Fetching manga collection
+2025-04-13 11:36:39 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.281s
+2025-04-13 11:46:36 |DBG| anilist > Fetching anime collection
+2025-04-13 11:46:38 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.491s
+2025-04-13 11:46:38 |DBG| anilist > Fetching manga collection
+2025-04-13 11:46:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.568s
+2025-04-13 11:56:36 |DBG| anilist > Fetching anime collection
+2025-04-13 11:56:39 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.649s
+2025-04-13 11:56:39 |DBG| anilist > Fetching manga collection
+2025-04-13 11:56:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.577s
+2025-04-13 12:06:36 |DBG| anilist > Fetching anime collection
+2025-04-13 12:06:38 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.206s
+2025-04-13 12:06:38 |DBG| anilist > Fetching manga collection
+2025-04-13 12:06:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.378s
+2025-04-13 12:16:36 |DBG| anilist > Fetching anime collection
+2025-04-13 12:16:36 |TRC| ws > Sending message type=check-for-updates
+2025-04-13 12:16:38 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.306s
+2025-04-13 12:16:38 |DBG| anilist > Fetching manga collection
+2025-04-13 12:16:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.559s
+2025-04-13 12:26:36 |DBG| anilist > Fetching anime collection
+2025-04-13 12:26:38 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.279s
+2025-04-13 12:26:38 |DBG| anilist > Fetching manga collection
+2025-04-13 12:26:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.295s
+2025-04-13 12:36:36 |DBG| anilist > Fetching anime collection
+2025-04-13 12:36:39 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.641s
+2025-04-13 12:36:39 |DBG| anilist > Fetching manga collection
+2025-04-13 12:36:39 |INF| anilist > Successful Request rlr=88 rtt=527ms
+2025-04-13 12:46:36 |DBG| anilist > Fetching anime collection
+2025-04-13 12:46:38 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.292s
+2025-04-13 12:46:38 |DBG| anilist > Fetching manga collection
+2025-04-13 12:46:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.51s
+2025-04-13 12:56:36 |DBG| anilist > Fetching anime collection
+2025-04-13 12:56:38 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.317s
+2025-04-13 12:56:38 |DBG| anilist > Fetching manga collection
+2025-04-13 12:56:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.248s
+2025-04-13 13:06:36 |DBG| anilist > Fetching anime collection
+2025-04-13 13:06:38 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.448s
+2025-04-13 13:06:38 |DBG| anilist > Fetching manga collection
+2025-04-13 13:06:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.653s
+2025-04-13 13:16:36 |TRC| ws > Sending message type=check-for-updates
+2025-04-13 13:16:36 |DBG| anilist > Fetching anime collection
+2025-04-13 13:16:39 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.546s
+2025-04-13 13:16:39 |DBG| anilist > Fetching manga collection
+2025-04-13 13:16:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.261s
+2025-04-13 13:26:36 |DBG| anilist > Fetching anime collection
+2025-04-13 13:26:38 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.291s
+2025-04-13 13:26:38 |DBG| anilist > Fetching manga collection
+2025-04-13 13:26:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.504s
+2025-04-13 13:36:36 |DBG| anilist > Fetching anime collection
+2025-04-13 13:36:38 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.465s
+2025-04-13 13:36:38 |DBG| anilist > Fetching manga collection
+2025-04-13 13:36:40 |WRN| anilist > Successful Request (slow) rlr=88 rtt=1.527s

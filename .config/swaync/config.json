@@ -1,0 +1,61 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "cssPriority": "user",
+  "layer": "overlay",
+  "layer-shell": true,
+
+  "control-center-layer": "top",
+  "control-center-width": 380,
+  "control-center-height": 750, 
+  "control-center-margin-top": 2,
+  "control-center-margin-bottom": 0,
+  "control-center-margin-right": 40,
+  "control-center-margin-left": 0,
+
+  "notification-window-width": 350,
+  "notification-window-height": 200,
+  "notification-icon-size": 70,
+  "notification-body-image-height": 200,
+  "notification-body-image-width": 200,
+  "notification-2fa-action": true,
+  "notifications-inline-replies": true,
+
+  "timeout": 4,
+  "timeout-low": 4,
+  "timeout-critical": 4,
+  
+  "fit-to-screen": false,
+  "relative-timestamps": true,
+  "keyboard-shortcuts": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": true,
+  "script-fail-notify": true,
+  "widgets": [
+    "mpris",
+    "title",
+    "dnd",
+    "notifications"
+  ],
+
+  "widget-config": {
+    "title": {
+      "text": "NOTIFICATIONS",
+      "clear-all-button": true,
+      "button-text": "󰩺  CLEAR"
+    },
+
+    "dnd": {
+      "text": "FUCK OFF"
+    },
+
+    "mpris": {
+      "image-size": 76,
+      "image-radius": 10
+    }
+
+  }
+}

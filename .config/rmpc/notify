@@ -1,0 +1,59 @@
+#!/usr/bin/env sh
+
+# Directory where to store temporary data
+TMP_DIR="/tmp/rmpc"
+
+# Ensure the directory is created
+mkdir -p "$TMP_DIR"
+
+# Where to temporarily store the album art received from rmpc
+ALBUM_ART_PATH="$TMP_DIR/notification_cover"
+
+# Path to fallback album art if no album art is found by rmpc/mpd
+# Change this to your needs
+DEFAULT_ALBUM_ART_PATH="$TMP_DIR/default_album_art.jpg"
+
+# Save album art of the currently playing song to a file
+if ! rmpc albumart --output "$ALBUM_ART_PATH"; then
+  # Use default album art if rmpc returns non-zero exit code
+  ALBUM_ART_PATH="${DEFAULT_ALBUM_ART_PATH}"
+fi
+
+# Send the notification
+notify-send -i "${ALBUM_ART_PATH}" "${TITLE^^}" "$ARTIST - $ALBUM"
+
+#!/bin/env sh
+
+LRCLIB_INSTANCE="https://lrclib.net"
+
+if [ "$HAS_LRC" = "false" ]; then
+  mkdir -p "$(dirname "$LRC_FILE")"
+
+  LYRICS="$(curl -X GET -sG \
+    -H "Lrclib-Client: rmpc-$VERSION" \
+    --data-urlencode "artist_name=$ARTIST" \
+    --data-urlencode "track_name=$TITLE" \
+    --data-urlencode "album_name=$ALBUM" \
+    "$LRCLIB_INSTANCE/api/get" | jq -r '.syncedLyrics')"
+
+  if [ -z "$LYRICS" ]; then
+    rmpc remote --pid "$PID" status "Failed to download lyrics for $ARTIST - $TITLE" --level error
+    exit
+  fi
+
+  if [ "$LYRICS" = "null" ]; then
+    rmpc remote --pid "$PID" status "Lyrics for $ARTIST - $TITLE not found" --level warn
+    exit
+  fi
+
+  echo "[ar:$ARTIST]" >"$LRC_FILE"
+  {
+    echo "[al:$ALBUM]"
+    echo "[ti:$TITLE]"
+  } >>"$LRC_FILE"
+  echo "$LYRICS" | sed -E '/^\[(ar|al|ti):/d' >>"$LRC_FILE"
+
+  rmpc remote --pid "$PID" indexlrc --path "$LRC_FILE"
+  rmpc remote --pid "$PID" status "Downloaded lyrics for $ARTIST - $TITLE" --level info
+fi
+

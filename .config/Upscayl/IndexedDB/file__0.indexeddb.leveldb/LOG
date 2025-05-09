@@ -1,0 +1,14 @@
+2024/02/15-10:08:49.836 bec5 Reusing MANIFEST /home/hypr/.config/Upscayl/IndexedDB/file__0.indexeddb.leveldb/MANIFEST-000001
+2024/02/15-10:08:49.837 bec5 Recovering log #22
+2024/02/15-10:08:49.837 bec5 Reusing old log /home/hypr/.config/Upscayl/IndexedDB/file__0.indexeddb.leveldb/000022.log 
+2024/02/15-10:08:49.837 bec5 Delete type=2 #20
+2024/02/15-10:08:49.932 bee0 Level-0 table #27: started
+2024/02/15-10:08:49.934 bee0 Level-0 table #27: 622 bytes OK
+2024/02/15-10:08:49.938 bee0 Delete type=0 #22
+2024/02/15-10:08:49.938 bee0 Manual compaction at level-0 from '\x00\x08\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x09\x00\x00\x00' @ 0 : 0; will stop at '\x00\x08\x00\x00\x05' @ 173 : 1
+2024/02/15-10:08:49.938 bee0 Compacting 1@0 + 1@1 files
+2024/02/15-10:08:49.940 bee0 Generated table #28@0: 35 keys, 1089 bytes
+2024/02/15-10:08:49.940 bee0 Compacted 1@0 + 1@1 files => 1089 bytes
+2024/02/15-10:08:49.944 bee0 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/02/15-10:08:49.944 bee0 Delete type=2 #27
+2024/02/15-10:08:49.944 bec3 Manual compaction at level-0 from '\x00\x08\x00\x00\x05' @ 173 : 1 .. '\x00\x09\x00\x00\x00' @ 0 : 0; will stop at (end)

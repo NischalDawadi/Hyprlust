@@ -1,0 +1,11 @@
+$toolkit: "gtk3";
+$dark-theme: true;
+$light-topbar: false;
+$compact: @compact@;
+
+@import "@current_source_dir@/../variables";
+@import "@current_source_dir@/../colors";
+@import "@current_source_dir@/sass/drawing";
+@import "@current_source_dir@/sass/common";
+@import "@current_source_dir@/sass/apps";
+@import "@current_source_dir@/sass/colors-public";

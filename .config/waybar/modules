@@ -1,0 +1,583 @@
+//* ---- 💫 https://github.com/JaKooLit 💫 ---- *//
+/* Waybar Modules */
+
+{
+
+//  NUMBERS and ICONS style
+"hyprland/workspaces#4": {
+	//"format": "{name}",
+	//"format": " {name} {icon} ",
+	"format": " {icon} ",
+	"show-special": false,
+	"active-only": false,
+	"on-click": "activate",
+	"on-scroll-up": "hyprctl dispatch workspace e+1",
+	"on-scroll-down": "hyprctl dispatch workspace e-1",
+	"all-outputs": true,
+	"sort-by-number": true,
+	"persistent-workspaces": {
+		"1": [],
+		"2": [],
+		"3": [],
+		"4": [],
+	},
+	"format-icons": {
+		"1": " ",
+		"2": " ",
+		"3": " ",
+		"4": " ",
+		"5": "",
+		"6": " ",
+		"7": "",
+		"8": " ",
+		"9": " ",
+		"10": "10",
+		"focused": "",
+		"default": "",
+	},
+},
+// GROUP
+
+"group/demo": {
+    "orientation": "inherit",
+    "modules": [ "group/custom_right" , "battery"],
+    },
+
+"group/custom_right": {
+	"orientation": "horizontal",
+	"modules": [
+		"tray",
+		"pulseaudio",
+                "mpris",
+	]
+},
+
+
+
+"battery": {
+	//"interval": 5,
+	"align": 0,
+	"rotate": 0,
+	//"bat": "BAT1",
+	//"adapter": "ACAD",
+	"full-at": 100,
+	"design-capacity": false,
+	"states": {
+		"good": 95,
+		"warning": 30,
+		"critical": 15
+	},
+	"format": "{icon} {capacity}",
+	"format-charging": " {capacity}%",
+	"format-plugged": "󱘖 {capacity}%",
+	"format-alt-click": "click",
+	"format-full": "{icon} Full",
+	"format-alt": "{icon} {time}",
+	"format-icons": [
+		"󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+	],
+	"format-time": "{H}h {M}min",
+	"tooltip": true,
+	"tooltip-format": "{timeTo} {power}w",
+	"on-click-middle": "~/.config/hypr/scripts/ChangeBlur.sh",
+	"on-click-right": "~/.config/hypr/scripts/Wlogout.sh",
+},
+
+"actions": {
+	"on-click-right": "mode",
+	"on-click-forward": "tz_up",
+	"on-click-backward": "tz_down",
+	"on-scroll-up": "shift_up",
+	"on-scroll-down": "shift_down"
+},
+
+"idle_inhibitor": {
+	"format": "{icon}",
+	"format-icons": {
+		"activated": " ",
+		"deactivated": " ",
+	}
+},
+
+"mpris": {
+	"interval": 10,
+	"format": "{player_icon} ",
+	"format-paused": "{status_icon}",
+	"on-click-middle": "playerctl play-pause",
+	"on-click": "playerctl previous",
+	"on-click-right": "playerctl next",
+	"scroll-step": 5.0,
+	"on-scroll-up": "~/.config/hypr/scripts/Volume.sh --inc",
+	"on-scroll-down": "~/.config/hypr/scripts/Volume.sh --dec",
+	"smooth-scrolling-threshold": 1,
+	"player-icons": {
+		"chromium": "",
+                "mpd" : "",
+		"default": "",
+		"firefox": "",
+		"kdeconnect": "",
+		"mopidy": "",
+		"mpv": "󰐹",
+		"spotify": "",
+		"vlc": "󰕼",
+	},
+	"status-icons": {
+		"paused": "󰐎",
+		"playing": "",
+		"stopped": "",
+	},
+	// "ignored-players": ["firefox"]
+	"max-length": 10,
+},
+
+"pulseaudio": {
+	"format": "{icon} {volume}%",
+	"format-bluetooth": "{icon} 󰂰 {volume}",
+	"format-muted": "󰖁",
+	"format-icons": {
+		"headphone": "",
+		"hands-free": "",
+		"headset": "",
+		"phone": "",
+		"portable": "",
+		"car": "",
+		"default": [
+			"", "", "󰕾",  ""
+		],
+		"ignored-sinks": [
+			"Easy Effects Sink"
+		],
+	},
+	"scroll-step": 5.0,
+	"on-click": "~/.config/hypr/scripts/Volume.sh --toggle",
+	"on-click-right": "pavucontrol -t 3",
+	"on-scroll-up": "~/.config/hypr/scripts/Volume.sh --inc",
+	"on-scroll-down": "~/.config/hypr/scripts/Volume.sh --dec",
+	"tooltip-format": "{icon} {desc} | {volume}%",
+	"smooth-scrolling-threshold": 1,
+},
+"pulseaudio#microphone": {
+	"format": "{format_source}",
+	"format-source": " {volume}%",
+	"format-source-muted": "",
+	"on-click": "~/.config/hypr/scripts/Volume.sh --toggle-mic",
+	"on-click-right": "pavucontrol -t 4",
+	"on-scroll-up": "~/.config/hypr/scripts/Volume.sh --mic-inc",
+	"on-scroll-down": "~/.config/hypr/scripts/Volume.sh --mic-dec",
+	"tooltip-format": "{source_desc} | {source_volume}%",
+	"scroll-step": 5,
+},
+"temperature": {
+	"interval": 10,
+	"tooltip": true,
+	"hwmon-path": [
+		"/sys/class/hwmon/hwmon6/temp1_input",
+		"/sys/class/thermal/thermal_zone0/temp"
+	],
+	//"thermal-zone": 0,
+	"critical-threshold": 82,
+	"format-critical": "{temperatureC}°C {icon}",
+	"format": "{temperatureC}°C {icon}",
+	"format-icons": [
+		"󰈸"
+	],
+	"on-click-right": "kitty --title nvtop sh -c 'nvtop'"
+},
+"tray": {
+	"icon-size": 16,
+	"spacing": 4,
+},
+"wireplumber": {
+	"format": "{icon} {volume} %",
+	"format-muted": " Mute",
+	"on-click": "~/.config/hypr/scripts/Volume.sh --toggle",
+	"on-click-right": "pavucontrol -t 3",
+	"on-scroll-up": "~/.config/hypr/scripts/Volume.sh --inc",
+	"on-scroll-down": "~/.config/hypr/scripts/Volume.sh --dec",
+	"format-icons": [
+		"", "", "󰕾", ""
+	],
+},
+"wlr/taskbar": {
+	"format": "{icon} {name} ",
+	"icon-size": 15,
+	"all-outputs": false,
+	"tooltip-format": "{title}",
+	"on-click": "activate",
+	"on-click-middle": "close",
+	"ignore-list": [
+		"wofi",
+		"rofi",
+	]
+},
+
+"custom/menu": {
+	"format": "{}",
+	"exec": "echo ; echo 󱓟 app launcher",
+	"interval": 86400, // once every day
+	"tooltip": true,
+	"on-click": "pkill rofi || rofi -show drun -modi run,drun,filebrowser,window",
+	"on-click-middle": "~/.config/hypr/UserScripts/WallpaperSelect.sh",
+	"on-click-right": "~/.config/hypr/scripts/WaybarLayout.sh",
+},
+// This is a custom cava visualizer
+"custom/cava_mviz": {
+	"exec": "~/.config/hypr/scripts/WaybarCava.sh",
+	"format": "{}"
+},
+"custom/touch": {
+   "format": "󱓟 {}",
+   "on-click": "pkill wvkbd-mobintl || wvkbd-mobintl -L 200",
+   },
+   
+"custom/playerctl": {
+	"format": "<span>{}</span>",
+	"return-type": "json",
+	"max-length": 35,
+	"exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} ~ {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+	"on-click-middle": "playerctl play-pause",
+	"on-click": "playerctl previous",
+	"on-click-right": "playerctl next",
+	"scroll-step": 5.0,
+	"on-scroll-up": "~/.config/hypr/scripts/Volume.sh --inc",
+	"on-scroll-down": "~/.config/hypr/scripts/Volume.sh --dec",
+	"smooth-scrolling-threshold": 1,
+},
+"custom/power": {
+	"format": "⏻",
+	"exec": "echo ; echo 󰟡 power // blur",
+	"on-click": "~/.config/hypr/scripts/Wlogout.sh",
+	"on-click-right": "~/.config/hypr/scripts/ChangeBlur.sh",
+	"interval": 86400, // once every day
+	"tooltip": true,
+},
+"custom/swaync": {
+	"tooltip": true,
+	"format": "{icon} {}",
+	"format-icons": {
+		"notification": "<span foreground='red'><sup></sup></span>",
+		"none": "",
+		"dnd-notification": "<span foreground='red'><sup></sup></span>",
+		"dnd-none": "",
+		"inhibited-notification": "<span foreground='red'><sup></sup></span>",
+		"inhibited-none": "",
+		"dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+		"dnd-inhibited-none": ""
+	},
+	"return-type": "json",
+	"exec-if": "which swaync-client",
+	"exec": "swaync-client -swb",
+	"on-click": "sleep 0.1 && swaync-client -t -sw",
+	"on-click-right": "swaync-client -d -sw",
+	"escape": true,
+},
+// NOTE:! This is only for Arch and Arch Based Distros  depend: \
+"custom/weather": {
+	"format": "{}",
+	"format-alt": "{alt}: {}",
+	"format-alt-click": "click",
+	"interval": 3600,
+	"return-type": "json",
+	//"exec": "~/.config/hypr/UserScripts/Weather.sh",
+	"exec": "~/.config/hypr/UserScripts/Weather.py",
+	"exec-if": "ping wttr.in -c1",
+	"tooltip": true,
+},
+// Separators
+"custom/separator#dot": {
+	"format": "",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#dot-line": {
+	"format": "",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#line": {
+	"format": "|",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#blank": {
+	"format": "",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#blank_2": {
+	"format": "  ",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#blank_3": {
+	"format": "   ",
+	"interval": "once",
+	"tooltip": false
+},
+
+  "hyprland/window": {
+    "format": "󰣆 {title}",
+    "max-length": 40,
+    "separate-outputs": false,
+    "rewrite": {
+      "^.*( — LibreWolf|LibreWolf)$": "󰈹 LibreWolf",
+      "(.*) — Mozilla Firefox": " Firefox",
+      "^.*v( .*|$)": " Neovim",
+      "^.*~$": "󰄛 Kitty",
+      "(.*) ": " Empty",
+      "^.*pdf( .*|$)": "",
+      "^.*(- Mousepad)$" :" $1"
+    },
+  },
+  "group/info": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "transition-left-to-right": false,
+    },
+    "modules": ["custom/arrow-right", "cpu", "memory", "temperature"],
+  },
+  "custom/arrow-right": {
+    "format": "󰁙",
+    "tooltip": false,
+  },
+  "cpu": {
+    "format": "󰘚 {usage}󱉸",
+  },
+  "memory": {
+	"interval": 10,
+	"format": "{used:0.1f}G 󰾆",
+	"format-alt": "{percentage}% 󰾆",
+	"format-alt-click": "click",
+	"tooltip": true,
+	"tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
+	"on-click-right": "kitty --title btop sh -c 'btop'"
+},
+  "disk": {
+    "interval": 600,
+    "format": "󰆼 {percentage_used}󱉸",
+    "path": "/",
+  },
+
+  "group/control-center": {
+    "orientation": "inherit",
+    "modules": ["hyprland/language", "group/audio", "group/connection"],
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "en",
+    "format-ru": "ru",
+    "keyboard-name": "kingston-hyperx-alloy-fps-pro-mechanical-gaming-keyboard-1",
+    // "keyboard-name":"at-translated-set-2-keyboard",
+    "on-click": "hyprctl switchxkblayout kingston-hyperx-alloy-fps-pro-mechanical-gaming-keyboard-1 next",
+  },
+  "group/audio": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "transition-left-to-right": false,
+    },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio#mic"
+      // "pulseaudio/slider"
+    ]
+  },
+
+  "group/connection": {
+    "orientation": "inherit",
+    "modules": ["group/network", "group/bluetooth"],
+  },
+  "group/network": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "transition-left-to-right": true,
+    },
+    "modules": ["network", "network#speed"],
+  },
+  "group/bluetooth": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "transition-left-to-right": true,
+    },
+    "modules": ["bluetooth", "bluetooth#status"],
+  },
+  "network": {
+    "format": "{icon}",
+    "format-icons": {
+      "wifi": ["󰤨"],
+      "ethernet": ["󰈁"],
+      "disconnected": [""],
+    },
+    "format-wifi": "󰤨",
+    "format-ethernet": "󰈁",
+    "format-disconnected": "󰖪",
+    "format-linked": "󰈁",
+    "tooltip": false,
+    "on-click": "pgrep -x rofi &>/dev/null && notify-send rofi || networkmanager_dmenu",
+  },
+  "network#speed": {
+    "format": " {bandwidthDownBits} ",
+    "interval": 5,
+    "tooltip-format": "{ipaddr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)   \n{ipaddr} | {frequency} MHz{icon} ",
+    "tooltip-format-ethernet": "{ifname} 󰈀 \n{ipaddr} | {frequency} MHz{icon} ",
+    "tooltip-format-disconnected": "Not Connected to any type of Network",
+    "tooltip": true,
+    "on-click": "pgrep -x rofi &>/dev/null && notify-send rofi || networkmanager_dmenu",
+  },
+  "bluetooth": {
+    "format-on": "",
+    "format-off": "󰂲",
+    "format-disabled": "",
+    "format-connected": "",
+    "tooltip": false,
+    // "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    // "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    // "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    // "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "overskride",
+  },
+  "bluetooth#status": {
+    "format-on": "",
+    "format-off": "",
+    "format-disabled": "",
+    "format-connected": "<b>{num_connections}</b>",
+    "format-connected-battery": "<small><b>{device_battery_percentage}%</b></small>",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "rofi-bluetooth -config ~/.config/rofi/menu.d/network.rasi -i",
+  },
+  "group/hub": {
+    "orientation": "inherit",
+    "modules": ["group/utils", "clock"],
+  },
+  "group/utils": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "transition-left-to-right": true,
+    },
+    "modules": ["custom/arrow-left", "custom/notifications", "custom/weather", "custom/theme-switcher"],
+  },
+  "custom/arrow-left": {
+    "format": "󰁒",
+    "tooltip": false,
+  },
+  "custom/notifications": {
+    "tooltip": false,
+    "format": "{icon} {}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂚",
+      "dnd-notification": "󰂛",
+      "dnd-none": "󰂛",
+      "inhibited-notification": "󰂚",
+      "inhibited-none": "󰂚",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰂛"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+"clock": {
+	"interval": 1,
+	"format": "{:%I:%M %p}", // AM PM format
+	//"format": " {:%H:%M:%S}",
+	"format-alt": " {:%H:%M   %Y, %d %B, %A}",
+	"tooltip-format": "<tt><small>{calendar}</small></tt>",
+	"calendar": {
+		"mode": "year",
+		"mode-mon-col": 3,
+		"weeks-pos": "right",
+		"on-scroll": 1,
+		"format": {
+			"months": "<span color='#ffead3'><b>{}</b></span>",
+			"days": "<span color='#ecc6d9'><b>{}</b></span>",
+			"weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+			"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+			"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+		}
+	}
+},
+"actions": {
+	"on-click-right": "mode",
+	"on-click-forward": "tz_up",
+	"on-click-backward": "tz_down",
+	"on-scroll-up": "shift_up",
+	"on-scroll-down": "shift_down"
+},
+  },
+  "group/power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "transition-left-to-right": false,
+    },
+    "modules": ["battery", "power-profiles-daemon"],
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}",
+    "format-charging": "<b>{icon} </b>",
+    "format-full": "<span color='#82A55F'><b>{icon}</b></span>",
+    "format-icons": [
+      "󰁻",
+      "󰁼",
+      "󰁾",
+      "󰂀",
+      "󰂂",
+      "󰁹"
+    ],
+    "tooltip-format": "{timeTo} {capacity} % | {power} W"
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "<span color='#B37F34'><small></small></span>",
+      "balanced": "<span><small> </small></span>",
+      "power-saver": "<span color='#a6e3a1'><small></small></span>"
+    }
+  },
+}
+
+"mpd": {
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "interval": 10,
+    "consume-icons": {
+        "on": " " // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+        "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+        "on": " "
+    },
+    "repeat-icons": {
+        "on": " "
+    },
+    "single-icons": {
+        "on": "1 "
+    },
+    "state-icons": {
+        "paused": "",
+        "playing": ""
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+}

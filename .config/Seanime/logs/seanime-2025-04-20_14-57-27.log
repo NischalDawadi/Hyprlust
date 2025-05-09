@@ -1,0 +1,63 @@
+2025-04-20 14:57:27 |INF| app > Seanime 2.8.0-Hachi
+2025-04-20 14:57:27 |INF| app > OS: linux
+2025-04-20 14:57:27 |INF| app > Arch: amd64
+2025-04-20 14:57:27 |INF| app > Processor count: 6
+2025-04-20 14:57:27 |DBG| app > Initializing config
+2025-04-20 14:57:27 |INF| app > Data directory: /home/hypr/.config/Seanime
+2025-04-20 14:57:27 |INF| app > Working directory: /home/hypr/.local/bin
+2025-04-20 14:57:27 |INF| app > Deleted 1 log files older than 14 days
+2025-04-20 14:57:27 |INF| db > Database instantiated name=seanime.db
+2025-04-20 14:57:27 |DBG| db > Local files retrieved
+2025-04-20 14:57:27 |DBG| extensions > Loaded built-in manga provider extension id=comick
+2025-04-20 14:57:27 |DBG| extensions > Loaded built-in manga provider extension id=comick-multi
+2025-04-20 14:57:27 |DBG| extensions > Loaded built-in manga provider extension id=mangapill
+2025-04-20 14:57:27 |DBG| extensions > Loaded built-in manga provider extension id=weebcentral
+2025-04-20 14:57:27 |DBG| extensions > Loaded built-in manga provider extension id=mangadex
+2025-04-20 14:57:27 |DBG| extensions > Loaded built-in manga provider extension id=manganato
+2025-04-20 14:57:27 |INF| local platform > Database instantiated name=local.db
+2025-04-20 14:57:27 |INF| continuity > Initialized manager
+2025-04-20 14:57:27 |TRC| goja runtime > Pre-warming pool size=5
+2025-04-20 14:57:27 |DBG| app > Refreshing modules
+2025-04-20 14:57:27 |DBG| manga downloader > Reading download directory
+2025-04-20 14:57:27 |TRC| ws > Sending message type=refreshed-manga-download-data
+2025-04-20 14:57:27 |TRC| torrent repo > Setting settings
+2025-04-20 14:57:27 |INF| discordrpc > Discord Rich Presence enabled
+2025-04-20 14:57:27 |ERR| discordrpc > rich presence enabled but failed to create discord rpc client error="dial unix /run/user/1001/discord-ipc-0: connect: no such file or directory"
+2025-04-20 14:57:27 |ERR| app > Failed to login to qBittorrent error="Post \"http://127.0.0.1:8081/api/v2/auth/login\": dial tcp 127.0.0.1:8081: connect: connection refused"
+2025-04-20 14:57:27 |DBG| extensions > Loaded built-in onlinestream provider extension id=animepahe
+2025-04-20 14:57:27 |DBG| extensions > Loaded built-in anime torrent provider extension id=nyaa
+2025-04-20 14:57:27 |DBG| extensions > Loaded built-in anime torrent provider extension id=nyaa-sukebei
+2025-04-20 14:57:27 |DBG| extensions > Loaded built-in anime torrent provider extension id=animetosho
+2025-04-20 14:57:27 |DBG| extensions > Loaded built-in anime torrent provider extension id=seadex
+2025-04-20 14:57:27 |TRC| extensions > Loading external extensions
+2025-04-20 14:57:27 |TRC| extensions > Killing Goja VMs
+2025-04-20 14:57:27 |DBG| extensions > Killed Goja VMs
+2025-04-20 14:57:27 |TRC| extensions > Unloading external extensions
+2025-04-20 14:57:27 |DBG| extensions > Unloaded external extensions
+2025-04-20 14:57:27 |DBG| extensions > Loaded external extensions
+2025-04-20 14:57:27 |TRC| ws > Sending message type=extensions-reloaded
+2025-04-20 14:57:27 |INF| watcher > Watching directories: [Anime]
+2025-04-20 14:57:27 |INF| watcher > Library size: 3.1 GB
+2025-04-20 14:57:27 |INF| app > Refreshed modules
+2025-04-20 14:57:27 |DBG| manga > Initialized provider extension bank
+2025-04-20 14:57:27 |DBG| onlinestream > Initialized provider extension bank
+2025-04-20 14:57:27 |DBG| torrent repo > Initialized anime provider extension bank
+2025-04-20 14:57:27 |DBG| app > Fetching Anilist data
+2025-04-20 14:57:27 |INF| app > Authenticated to AniList
+2025-04-20 14:57:27 |INF| app > Fetched Anilist data
+2025-04-20 14:57:27 |DBG| anilist > Fetching anime collection
+2025-04-20 14:57:27 |DBG| transcoder > Hardware acceleration: vaapi
+2025-04-20 14:57:27 |INF| transcoder > Initialized
+2025-04-20 14:57:27 |INF| mediastream > Transcoder module initialized
+2025-04-20 14:57:27 |INF| mediastream > Module initialized
+2025-04-20 14:57:27 |INF| torrentstream > Initialized torrent client on port 43213
+2025-04-20 14:57:27 |TRC| torrentstream > Dropping all torrents
+2025-04-20 14:57:27 |DBG| torrentstream > Dropped all torrents
+2025-04-20 14:57:27 |INF| torrentstream > Module initialized
+2025-04-20 14:57:27 |INF| app > Serving embedded web interface
+2025-04-20 14:57:27 |INF| app > Web assets path: /home/hypr/.config/Seanime/assets
+2025-04-20 14:57:27 |INF| app > Manga downloads path: /home/hypr/.config/Seanime/manga
+2025-04-20 14:57:27 |INF| app > Offline assets path: /home/hypr/.config/Seanime/offline/assets
+2025-04-20 14:57:27 |INF| app > Server Address: 0.0.0.0:43211
+2025-04-20 14:57:27 |INF| app > Seanime started at :43211
+2025-04-20 14:57:27 |TRC| Received signal > interrupt

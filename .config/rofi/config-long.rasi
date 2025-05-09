@@ -1,0 +1,21 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+/* Main Config (long) */
+
+@import "~/.config/rofi/config.rasi" 
+
+/* ---- Window ---- */
+window {
+  width: 50%;
+}
+
+/* ---- Entry ---- */
+entry {
+  placeholder: "🔎 Search       ";
+}
+
+/* ---- Listview ---- */
+listview {
+  columns: 1;
+  lines: 7;
+  scrollbar: true;
+}

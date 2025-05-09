@@ -1,0 +1,27 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "margin": "4 ",
+  "fixed-center": true,
+  "reload_style_on_change": true,
+  "include": ["~/.config/waybar/modules"],
+  "modules-left": [
+    "hyprland/window",
+    "group/info",
+  ],
+  
+  "modules-center": [
+    "hyprland/workspaces#pacman"
+  ],
+
+  "modules-right": [
+    
+"tray",
+
+"custom/separator#blank_2",
+"mpris",
+"group/power",
+    "group/hub",
+    
+  ],
+}

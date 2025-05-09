@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="400" height="200" viewBox="0 0 400 200">
+  <sodipodi:namedview showgrid="true">
+    <inkscape:grid empspacing="4"/>
+  </sodipodi:namedview>
+
+  <defs>
+    <linearGradient id="light-theme-surface-z0">
+      <stop offset="1" stop-color="#f9f9f9"/>
+    </linearGradient>
+
+    <linearGradient id="light-theme-surface-z8">
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+
+    <linearGradient id="light-theme-disabled-hint-on-surface">
+      <stop offset="1" stop-color="#000000" stop-opacity=".26"/>
+    </linearGradient>
+
+    <linearGradient id="light-theme-primary">
+      <stop offset="1" stop-color="#1967d2"/>
+    </linearGradient>
+
+    <linearGradient id="light-theme-on-primary">
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+
+    <linearGradient id="dark-theme-surface-z0">
+      <stop offset="1" stop-color="#121212"/>
+    </linearGradient>
+
+    <linearGradient id="dark-theme-surface-z8">
+      <stop offset="1" stop-color="#2e2e2e"/>
+    </linearGradient>
+
+    <linearGradient id="dark-theme-disabled-hint-on-surface">
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".26"/>
+    </linearGradient>
+
+    <linearGradient id="dark-theme-primary">
+      <stop offset="1" stop-color="#8ab4f8"/>
+    </linearGradient>
+
+    <linearGradient id="dark-theme-on-primary">
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+
+    <g id="base-scale-slider">
+      <rect width="24" height="24" fill="none"/>
+      <circle cx="12" cy="12" r="6"/>
+    </g>
+
+    <g id="base-scale-horz-marks-before-slider">
+      <rect width="24" height="24" fill="none"/>
+      <path d="M6 6h6a6 6 0 11-6 6z" transform="rotate(45 12 12)"/>
+    </g>
+
+    <g id="base-scale-vert-marks-after-slider">
+      <use xlink:href="#base-scale-horz-marks-before-slider" transform="rotate(90 12 12)"/>
+    </g>
+
+    <g id="base-scale-horz-marks-after-slider">
+      <use xlink:href="#base-scale-horz-marks-before-slider" transform="rotate(180 12 12)"/>
+    </g>
+
+    <g id="base-scale-vert-marks-before-slider">
+      <use xlink:href="#base-scale-horz-marks-before-slider" transform="rotate(270 12 12)"/>
+    </g>
+
+    <g id="base-selectionmode-checkbox">
+      <rect width="40" height="40" fill="none"/>
+      <rect x="2" y="2" width="36" height="36" rx="4"/>
+    </g>
+
+    <g id="base-selectionmode-checkmark">
+      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" transform="matrix(1.5 0 0 1.5 2 2)"/>
+    </g>
+  </defs>
+
+  <g id="light-theme">
+    <rect width="200" height="200" fill="url(#light-theme-surface-z0)" sodipodi:insensitive="true"/>
+
+    <g id="scale-slider" transform="translate(8 8)">
+      <use xlink:href="#base-scale-slider" fill="url(#light-theme-primary)"/>
+    </g>
+    <g id="scale-slider-disabled" transform="translate(8 40)">
+      <use xlink:href="#base-scale-slider" fill="url(#light-theme-surface-z0)"/>
+      <use xlink:href="#base-scale-slider" fill="url(#light-theme-disabled-hint-on-surface)"/>
+    </g>
+
+    <g id="scale-horz-marks-before-slider" transform="translate(40 8)">
+      <use xlink:href="#base-scale-horz-marks-before-slider" fill="url(#light-theme-primary)"/>
+    </g>
+    <g id="scale-horz-marks-before-slider-disabled" transform="translate(40 40)">
+      <use xlink:href="#base-scale-horz-marks-before-slider" fill="url(#light-theme-surface-z0)"/>
+      <use xlink:href="#base-scale-horz-marks-before-slider" fill="url(#light-theme-disabled-hint-on-surface)"/>
+    </g>
+
+    <g id="scale-horz-marks-after-slider" transform="translate(72 8)">
+      <use xlink:href="#base-scale-horz-marks-after-slider" fill="url(#light-theme-primary)"/>
+    </g>
+    <g id="scale-horz-marks-after-slider-disabled" transform="translate(72 40)">
+      <use xlink:href="#base-scale-horz-marks-after-slider" fill="url(#light-theme-surface-z0)"/>
+      <use xlink:href="#base-scale-horz-marks-after-slider" fill="url(#light-theme-disabled-hint-on-surface)"/>
+    </g>
+
+    <g id="scale-vert-marks-before-slider" transform="translate(104 8)">
+      <use xlink:href="#base-scale-vert-marks-before-slider" fill="url(#light-theme-primary)"/>
+    </g>
+    <g id="scale-vert-marks-before-slider-disabled" transform="translate(104 40)">
+      <use xlink:href="#base-scale-vert-marks-before-slider" fill="url(#light-theme-surface-z0)"/>
+      <use xlink:href="#base-scale-vert-marks-before-slider" fill="url(#light-theme-disabled-hint-on-surface)"/>
+    </g>
+
+    <g id="scale-vert-marks-after-slider" transform="translate(136 8)">
+      <use xlink:href="#base-scale-vert-marks-after-slider" fill="url(#light-theme-primary)"/>
+    </g>
+    <g id="scale-vert-marks-after-slider-disabled" transform="translate(136 40)">
+      <use xlink:href="#base-scale-vert-marks-after-slider" fill="url(#light-theme-surface-z0)"/>
+      <use xlink:href="#base-scale-vert-marks-after-slider" fill="url(#light-theme-disabled-hint-on-surface)"/>
+    </g>
+
+    <g id="selectionmode-checkbox-unchecked" transform="translate(8 72)">
+      <use xlink:href="#base-selectionmode-checkbox" fill="url(#light-theme-surface-z8)"/>
+    </g>
+    <g id="selectionmode-checkbox-checked" transform="translate(56 72)">
+      <use xlink:href="#base-selectionmode-checkbox" fill="url(#light-theme-primary)"/>
+      <use xlink:href="#base-selectionmode-checkmark" fill="url(#light-theme-on-primary)"/>
+    </g>
+  </g>
+
+  <g id="dark-theme" transform="translate(200)">
+    <rect width="200" height="200" fill="url(#dark-theme-surface-z0)" sodipodi:insensitive="true"/>
+
+    <g id="scale-slider-dark" transform="translate(8 8)">
+      <use xlink:href="#base-scale-slider" fill="url(#dark-theme-primary)"/>
+    </g>
+    <g id="scale-slider-disabled-dark" transform="translate(8 40)">
+      <use xlink:href="#base-scale-slider" fill="url(#dark-theme-surface-z0)"/>
+      <use xlink:href="#base-scale-slider" fill="url(#dark-theme-disabled-hint-on-surface)"/>
+    </g>
+
+    <g id="scale-horz-marks-before-slider-dark" transform="translate(40 8)">
+      <use xlink:href="#base-scale-horz-marks-before-slider" fill="url(#dark-theme-primary)"/>
+    </g>
+    <g id="scale-horz-marks-before-slider-disabled-dark" transform="translate(40 40)">
+      <use xlink:href="#base-scale-horz-marks-before-slider" fill="url(#dark-theme-surface-z0)"/>
+      <use xlink:href="#base-scale-horz-marks-before-slider" fill="url(#dark-theme-disabled-hint-on-surface)"/>
+    </g>
+
+    <g id="scale-horz-marks-after-slider-dark" transform="translate(72 8)">
+      <use xlink:href="#base-scale-horz-marks-after-slider" fill="url(#dark-theme-primary)"/>
+    </g>
+    <g id="scale-horz-marks-after-slider-disabled-dark" transform="translate(72 40)">
+      <use xlink:href="#base-scale-horz-marks-after-slider" fill="url(#dark-theme-surface-z0)"/>
+      <use xlink:href="#base-scale-horz-marks-after-slider" fill="url(#dark-theme-disabled-hint-on-surface)"/>
+    </g>
+
+    <g id="scale-vert-marks-before-slider-dark" transform="translate(104 8)">
+      <use xlink:href="#base-scale-vert-marks-before-slider" fill="url(#dark-theme-primary)"/>
+    </g>
+    <g id="scale-vert-marks-before-slider-disabled-dark" transform="translate(104 40)">
+      <use xlink:href="#base-scale-vert-marks-before-slider" fill="url(#dark-theme-surface-z0)"/>
+      <use xlink:href="#base-scale-vert-marks-before-slider" fill="url(#dark-theme-disabled-hint-on-surface)"/>
+    </g>
+
+    <g id="scale-vert-marks-after-slider-dark" transform="translate(136 8)">
+      <use xlink:href="#base-scale-vert-marks-after-slider" fill="url(#dark-theme-primary)"/>
+    </g>
+    <g id="scale-vert-marks-after-slider-disabled-dark" transform="translate(136 40)">
+      <use xlink:href="#base-scale-vert-marks-after-slider" fill="url(#dark-theme-surface-z0)"/>
+      <use xlink:href="#base-scale-vert-marks-after-slider" fill="url(#dark-theme-disabled-hint-on-surface)"/>
+    </g>
+
+    <g id="selectionmode-checkbox-unchecked-dark" transform="translate(8 72)">
+      <use xlink:href="#base-selectionmode-checkbox" fill="url(#dark-theme-surface-z8)"/>
+    </g>
+    <g id="selectionmode-checkbox-checked-dark" transform="translate(56 72)">
+      <use xlink:href="#base-selectionmode-checkbox" fill="url(#dark-theme-primary)"/>
+      <use xlink:href="#base-selectionmode-checkmark" fill="url(#dark-theme-on-primary)"/>
+    </g>
+  </g>
+</svg>

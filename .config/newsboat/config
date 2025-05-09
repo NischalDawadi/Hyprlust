@@ -1,0 +1,62 @@
+# feed options
+auto-reload yes
+reload-threads 10
+reload-time 60
+download-retries 2
+download-timeout 10
+download-full-page yes
+scrolloff 11
+always-display-description true
+goto-next-feed no
+
+# keybindings
+bind-key j down
+bind-key k up
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key G end
+bind-key g home
+bind-key l open
+bind-key h quit
+bind-key a toggle-article-read
+bind-key n next-unread
+bind-key N prev-unread
+bind-key D pb-download
+bind-key U show-urls
+bind-key x pb-delete
+bind-key s sort
+bind-key S rev-sort
+bind-key d delete-article
+bind-key f goto-url
+bind-key ENTER open
+
+browser "firefox %u &"
+macro v set browser "mpv %u &> /dev/null &" ; open-in-browser ; set browser "elinks %u"
+macro r set browser "readable %u 2> /dev/null | w3m -T text/html" ; open-in-browser ; set browser "firefox %u"
+# notification
+notify-format "Newsboat: finished reload, %f unread feeds (%n unread articles total)"
+notify-program "notify-send"
+notify-always no
+notify-screen yes
+notify-xterm yes
+notify-beep no
+
+# Colors
+color listnormal         color5   default
+color listnormal_unread  default  default
+color listfocus_unread   default  color3
+color listfocus black yellow dim
+color background         default  default
+color article            default  default
+color end-of-text-marker color8   default
+color info               color4   color8
+color hint-separator     default  color8
+color hint-description   default  color8
+color title              color14  color8
+
+highlight article "^(Feed|Title|Author|Link|Date): .+" color4 default bold
+highlight article "^(Feed|Title|Author|Link|Date):" color14 default bold
+
+highlight article "\\((link|image|video)\\)" color8 default
+highlight article "https?://[^ ]+" color4 default
+highlight article "\[[0-9]+\]" color6 default bold

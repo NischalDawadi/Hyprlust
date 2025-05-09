@@ -1,0 +1,100 @@
+2025-04-13 09:16:05 |INF| app > Seanime 2.7.5-Ekō
+2025-04-13 09:16:05 |INF| app > OS: linux
+2025-04-13 09:16:05 |INF| app > Arch: amd64
+2025-04-13 09:16:05 |INF| app > Processor count: 6
+2025-04-13 09:16:05 |DBG| app > Initializing config
+2025-04-13 09:16:05 |INF| app > Data directory: /home/hypr/.config/Seanime
+2025-04-13 09:16:05 |INF| app > Working directory: /home/hypr/.local/bin
+2025-04-13 09:16:05 |INF| app > Deleted 3 log files older than 14 days
+2025-04-13 09:16:05 |INF| db > Database instantiated name=seanime.db
+2025-04-13 09:16:05 |DBG| db > Local files retrieved
+2025-04-13 09:16:05 |INF| local platform > Database instantiated name=local.db
+2025-04-13 09:16:05 |INF| continuity > Initialized manager
+2025-04-13 09:16:05 |DBG| app > Refreshing modules
+2025-04-13 09:16:05 |DBG| manga downloader > Reading download directory
+2025-04-13 09:16:05 |TRC| ws > Sending message type=refreshed-manga-download-data
+2025-04-13 09:16:05 |TRC| torrent repo > Setting settings
+2025-04-13 09:16:05 |INF| discordrpc > Discord Rich Presence enabled
+2025-04-13 09:16:05 |ERR| discordrpc > rich presence enabled but failed to create discord rpc client error="dial unix /run/user/1001/discord-ipc-0: connect: no such file or directory"
+2025-04-13 09:16:05 |ERR| app > Failed to login to qBittorrent error="Post \"http://127.0.0.1:8081/api/v2/auth/login\": dial tcp 127.0.0.1:8081: connect: connection refused"
+2025-04-13 09:16:05 |INF| app > Refreshed modules
+2025-04-13 09:16:05 |INF| watcher > Watching directories: [Anime]
+2025-04-13 09:16:05 |DBG| manga > Initialized provider extension bank
+2025-04-13 09:16:05 |DBG| onlinestream > Initialized provider extension bank
+2025-04-13 09:16:05 |DBG| torrent repo > Initialized anime provider extension bank
+2025-04-13 09:16:05 |DBG| extensions > Loaded built-in manga provider extension id=comick
+2025-04-13 09:16:05 |INF| watcher > Library size: 3.1 GB
+2025-04-13 09:16:05 |DBG| extensions > Loaded built-in manga provider extension id=comick-multi
+2025-04-13 09:16:05 |DBG| extensions > Loaded built-in manga provider extension id=mangapill
+2025-04-13 09:16:05 |DBG| torrent repo > Anime provider extension added
+2025-04-13 09:16:05 |DBG| extensions > Loaded built-in manga provider extension id=weebcentral
+2025-04-13 09:16:05 |DBG| extensions > Loaded built-in manga provider extension id=mangadex
+2025-04-13 09:16:05 |DBG| extensions > Loaded built-in manga provider extension id=manganato
+2025-04-13 09:16:05 |TRC| extensions > Loading external online streaming provider id=animepahe language=typescript
+2025-04-13 09:16:05 |DBG| torrent repo > Anime provider extension added
+2025-04-13 09:16:05 |TRC| extensions > Creating javascript VM for external manga provider id=animepahe language=typescript
+2025-04-13 09:16:05 |DBG| extensions > Loaded built-in onlinestream provider extension id=animepahe
+2025-04-13 09:16:05 |DBG| extensions > Loaded built-in anime torrent provider extension id=nyaa
+2025-04-13 09:16:05 |DBG| extensions > Loaded built-in anime torrent provider extension id=nyaa-sukebei
+2025-04-13 09:16:05 |DBG| torrent repo > Anime provider extension added
+2025-04-13 09:16:05 |DBG| extensions > Loaded built-in anime torrent provider extension id=animetosho
+2025-04-13 09:16:05 |DBG| extensions > Loaded built-in anime torrent provider extension id=seadex
+2025-04-13 09:16:05 |TRC| extensions > Loading external extensions
+2025-04-13 09:16:05 |TRC| extensions > Killing Goja VMs
+2025-04-13 09:16:05 |DBG| extensions > Killed Goja VMs
+2025-04-13 09:16:05 |TRC| extensions > Unloading external extensions
+2025-04-13 09:16:05 |DBG| extensions > Unloaded external extensions
+2025-04-13 09:16:05 |DBG| torrent repo > Anime provider extension added
+2025-04-13 09:16:05 |DBG| extensions > Loaded external extensions
+2025-04-13 09:16:05 |TRC| ws > Sending message type=extensions-reloaded
+2025-04-13 09:16:05 |DBG| app > Fetching Anilist data
+2025-04-13 09:16:05 |INF| app > Authenticated to AniList
+2025-04-13 09:16:05 |INF| app > Fetched Anilist data
+2025-04-13 09:16:05 |DBG| anilist > Fetching anime collection
+2025-04-13 09:16:05 |DBG| transcoder > Hardware acceleration: vaapi
+2025-04-13 09:16:05 |INF| transcoder > Initialized
+2025-04-13 09:16:05 |INF| mediastream > Transcoder module initialized
+2025-04-13 09:16:05 |INF| mediastream > Module initialized
+2025-04-13 09:16:05 |INF| torrentstream > Initialized torrent client on port 43213
+2025-04-13 09:16:05 |TRC| torrentstream > Dropping all torrents
+2025-04-13 09:16:05 |DBG| torrentstream > Dropped all torrents
+2025-04-13 09:16:05 |INF| torrentstream > Module initialized
+2025-04-13 09:16:05 |INF| app > Serving embedded web interface
+2025-04-13 09:16:05 |INF| app > Web assets path: /home/hypr/.config/Seanime/assets
+2025-04-13 09:16:05 |INF| app > Manga downloads path: /home/hypr/.config/Seanime/manga
+2025-04-13 09:16:05 |INF| app > Offline assets path: /home/hypr/.config/Seanime/offline/assets
+2025-04-13 09:16:05 |INF| app > Server Address: 0.0.0.0:43211
+2025-04-13 09:16:05 |INF| app > Seanime started at :43211
+2025-04-13 09:16:06 |DBG| animetosho > Loaded Sneedex Nyaa IDs count=1442
+2025-04-13 09:16:07 |WRN| anilist > Successful Request (slow) rlr=89 rtt=2.274s
+2025-04-13 09:16:07 |TRC| ws > Sending message type=anilist-data-loaded
+2025-04-13 09:16:07 |DBG| anilist > Fetching manga collection
+2025-04-13 09:16:08 |INF| anilist > Successful Request rlr=88 rtt=457ms
+2025-04-13 09:16:11 |TRC| method=GET status=200 uri=/api/v1/status latency_human=3.158976ms
+2025-04-13 09:16:11 |DBG| ws > Client connected id=8d2bf396-3017-45a0-9160-8c549b011a54
+2025-04-13 09:16:11 |TRC| method=GET status=200 uri=/api/v1/auto-downloader/items latency_human="415.144µs"
+2025-04-13 09:16:11 |TRC| method=GET status=200 uri=/api/v1/library/missing-episodes latency_human=1.806196ms
+2025-04-13 09:16:11 |TRC| method=GET status=200 uri=/api/v1/manga/collection latency_human=4.053797ms
+2025-04-13 09:16:11 |TRC| method=GET status=200 uri=/api/v1/library/collection latency_human=4.80656ms
+2025-04-13 09:16:12 |TRC| method=GET status=200 uri=/api/v1/anilist/collection latency_human=13.726773ms
+2025-04-13 09:16:12 |TRC| method=GET status=200 uri=/api/v1/continuity/history latency_human="260.861µs"
+2025-04-13 09:16:12 |TRC| method=GET status=200 uri=/api/v1/latest-update latency_human=453.772375ms
+2025-04-13 09:16:12 |WRN| anilist > Long Request rlr=87 rtt=948ms
+2025-04-13 09:16:12 |TRC| method=POST status=200 uri=/api/v1/anilist/list-anime latency_human=950.880476ms
+2025-04-13 09:16:27 |TRC| method=POST status=200 uri=/api/v1/install-update latency_human=1.001972072s
+2025-04-13 09:16:28 |DBG| torrentstream > Shutting down module
+2025-04-13 09:16:28 |TRC| torrentstream > Dropping all torrents
+2025-04-13 09:16:28 |DBG| torrentstream > Dropped all torrents
+2025-04-13 09:16:28 |DBG| torrentstream > Closing torrent client
+2025-04-13 09:16:28 Running in update mode
+2025-04-13 09:16:28 |INF| selfupdate > Fetching latest release info
+2025-04-13 09:16:28 |INF| selfupdate > Downloading latest release
+2025-04-13 09:16:28 |DBG| updater > Downloading latest release asset_url=https://github.com/5rahim/seanime/releases/download/v2.8.0/seanime-2.8.0_Linux_x86_64.tar.gz dest=/home/hypr/.local/bin
+2025-04-13 09:16:28 |DBG| updater > Downloading assets
+2025-04-13 09:16:33 |INF| updater > Downloaded release assets dest=/home/hypr/.local/bin
+2025-04-13 09:16:33 |DBG| updater > Decompressing release assets archive_path=/home/hypr/.local/bin/seanime-2.8.0_Linux_x86_64.tar.gz
+2025-04-13 09:16:33 |DBG| updater > Decompressing release assets (gzip)
+2025-04-13 09:16:33 |DBG| updater > Decompressed release assets (gzip)
+2025-04-13 09:16:33 |INF| updater > Successfully decompressed downloaded release assets dest=/home/hypr/.local/bin/seanime_new_release
+2025-04-13 09:16:33 |INF| selfupdate > Creating backup
+2025-04-13 09:16:34 |INF| selfupdate > Renaming assets

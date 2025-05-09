@@ -1,0 +1,95 @@
+/******************
+ * GTK Colors Enhanced
+ * Generated with Matugen For HyprLuna
+ ******************/
+
+/* الألوان الأساسية */
+@define-color accent_color {{colors.primary.default.hex}};
+@define-color accent_bg_color {{colors.primary_container.default.hex}};
+@define-color accent_fg_color {{colors.on_primary_container.default.hex}};
+
+/* ألوان نافذة التطبيق */
+@define-color window_bg_color {{colors.surface_dim.default.hex}};
+@define-color window_fg_color {{colors.on_surface.default.hex}};
+
+/* ألوان شريط العنوان */
+@define-color headerbar_bg_color {{colors.surface_container.default.hex}};
+@define-color headerbar_fg_color {{colors.on_surface.default.hex}};
+@define-color headerbar_border_color {{colors.outline.default.hex}};
+@define-color headerbar_shade_color {{colors.surface_container_high.default.hex}};
+
+/* ألوان العناصر المنبثقة */
+@define-color popover_bg_color {{colors.surface_container.default.hex}};
+@define-color popover_fg_color {{colors.on_surface.default.hex}};
+
+/* ألوان العرض */
+@define-color view_bg_color {{colors.surface.default.hex}};
+@define-color view_fg_color {{colors.on_surface.default.hex}};
+
+/* ألوان البطاقات */
+@define-color card_bg_color {{colors.surface_container_low.default.hex}};
+@define-color card_fg_color {{colors.on_surface.default.hex}};
+@define-color card_shade_color {{colors.shadow.default.hex}};
+
+/* ألوان الشريط الجانبي */
+@define-color sidebar_bg_color @window_bg_color;
+@define-color sidebar_fg_color @window_fg_color;
+@define-color sidebar_border_color @window_bg_color;
+@define-color sidebar_backdrop_color @window_bg_color;
+
+/* ألوان الخلفية والنص */
+@define-color bg_color {{colors.surface.default.hex}};
+@define-color fg_color {{colors.on_surface.default.hex}};
+@define-color text_color {{colors.on_surface.default.hex}};
+@define-color text_color_disabled {{colors.on_surface.default.hex}};
+
+/* ألوان الأزرار */
+@define-color button_bg_color {{colors.surface_container.default.hex}};
+@define-color button_fg_color {{colors.on_surface.default.hex}};
+@define-color button_hover_color {{colors.primary.default.hex}};
+@define-color button_active_color {{colors.primary.default.hex}};
+@define-color button_checked_bg_color {{colors.primary_container.default.hex}};
+@define-color button_checked_fg_color {{colors.on_primary_container.default.hex}};
+
+/* ألوان الإطارات */
+@define-color borders {{colors.outline.default.hex}};
+@define-color outline_color {{colors.outline.default.hex}};
+@define-color outline_variant_color {{colors.outline_variant.default.hex}};
+
+/* ألوان الروابط */
+@define-color link_color {{colors.tertiary.default.hex}};
+@define-color link_visited_color {{colors.tertiary_container.default.hex}};
+
+/* ألوان التحذير والخطأ */
+@define-color warning_color {{colors.error.default.hex}};
+@define-color warning_bg_color {{colors.error_container.default.hex}};
+@define-color warning_fg_color {{colors.on_error_container.default.hex}};
+@define-color error_color {{colors.error.default.hex}};
+@define-color error_bg_color {{colors.error_container.default.hex}};
+@define-color error_fg_color {{colors.on_error_container.default.hex}};
+@define-color success_color {{colors.tertiary.default.hex}};
+@define-color success_bg_color {{colors.tertiary_container.default.hex}};
+@define-color success_fg_color {{colors.on_tertiary_container.default.hex}};
+
+/* ألوان الحالة النشطة والمحددة */
+@define-color selected_bg_color {{colors.primary_container.default.hex}};
+@define-color selected_fg_color {{colors.on_primary_container.default.hex}};
+@define-color selected_text_color {{colors.on_primary_container.default.hex}};
+
+/* ألوان التفاعلية */
+@define-color hover_color {{colors.primary.default.hex}};
+@define-color focus_color {{colors.primary.default.hex}};
+
+/* ألوان وضع الظلام المخصصة */
+@define-color dark_fill_color {{colors.surface_container_highest.default.hex}};
+@define-color light_fill_color {{colors.surface_bright.default.hex}};
+
+/* ألوان الاشعارات */
+@define-color info_color {{colors.secondary.default.hex}};
+@define-color info_bg_color {{colors.secondary_container.default.hex}};
+@define-color info_fg_color {{colors.on_secondary_container.default.hex}};
+
+/* ألوان الشفافية */
+@define-color shade_color {{colors.shadow.default.hex}};
+@define-color backdrop_color {{colors.surface_variant.default.hex}};
+@define-color overlay_color {{colors.shadow.default.hex}};

@@ -1,0 +1,38 @@
+set database "sqlite"
+set recolor "false"
+set recolor-keephue "true"
+set completion-bg "#000007"
+set completion-fg "#BFE3EA"
+set completion-group-bg "#000007"
+set completion-group-fg "#BFE3EA"
+set completion-highlight-bg "#BFE3EA"
+set completion-highlight-fg "#000007"
+
+set recolor-lightcolor "#000007"
+set recolor-darkcolor "#BFE3EA"
+set default-bg "#808083"
+set default-fg "#BFE3EA"
+set inputbar-bg "#000007"
+set inputbar-fg "#BFE3EA"
+set notification-bg "#000007"
+set notification-fg "#BFE3EA"
+set notification-error-bg "#60697E"
+set notification-error-fg "#BFE3EA"
+set notification-warning-bg "#60697E"
+set notification-warning-fg "#BFE3EA"
+set statusbar-bg "#4C4C51"
+set statusbar-fg "#D7E9EC"
+set index-bg "#BA4F80"
+set index-fg "#BFE3EA"
+set index-active-bg "#BFE3EA"
+set index-active-fg "#000007"
+set render-loading-bg "#000007"
+set render-loading-fg "#BFE3EA"
+
+set window-title-home-tilde true
+set statusbar-basename true
+set selection-clipboard clipboard
+
+map i recolor 
+set adjust-open "best-fit"
+

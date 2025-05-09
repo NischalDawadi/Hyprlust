@@ -1,0 +1,85 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+// Sleek
+
+{
+"include": "~/.config/waybar/modules",
+"layer": "top",
+"position": "top",
+"height": 14,
+"margin-left": 10,
+"margin-right": 10,
+"margin-top": 2,
+	
+"modules-left": [
+	"custom/menu",
+	"custom/separator#dot-line",
+	"hyprland/workspaces#kanji",
+	"custom/separator#blank_1",
+	"custom/weather",
+	
+],
+
+"modules-center": [		
+	"hyprland/window"	
+],
+		
+"modules-right": [
+        "custom/padd",
+        "cpu",
+"custom/separator#blank",
+        "temperature",
+"custom/separator#blank",
+	"battery",
+"custom/separator#blank",
+"pulseaudio",
+        
+	"custom/separator#blank_2",
+"custom/swaync",	
+"tray",
+	"custom/separator#blank",
+	"mpris",
+	
+	
+        "custom/separator#blank_2",
+        "clock",
+	"custom/separator#dot-line",
+	"custom/power",					
+	],
+"modules-right": [
+        
+        "cpu",
+"custom/separator#blank",
+        "temperature",
+"custom/separator#blank",
+	"battery",
+"custom/separator#blank",
+"pulseaudio",
+        
+	"custom/separator#blank_2",
+"custom/swaync",	
+"tray",
+	"custom/separator#blank",
+	"mpris",
+	
+	
+        "custom/separator#blank_2",
+        "clock",
+	"custom/separator#dot-line",
+	"custom/power",					
+	],
+
+
+// Additional format / customize modules
+
+"custom/power": {
+	"format": " ",
+	"icon-size": 20,
+	"tooltip": false,
+},
+	
+"clock": {
+	"format": "{:%I:%M %p - %d/%b}", //for AM/PM
+    //"format": "{:%H:%M - %d/%b}", // 24H
+	"tooltip": true
+},
+}

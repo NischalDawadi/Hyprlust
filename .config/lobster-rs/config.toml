@@ -1,0 +1,10 @@
+use_external_menu= true
+download = "/home/hypr"
+provider = "Vidcloud"
+player = "mpv"
+subs_language="English"
+history = false
+no_subs = true
+image_preview = true
+#image_config_path = "/home/hypr/.config/rofi/launcher.rasi"
+debug = false

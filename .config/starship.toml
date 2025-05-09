@@ -1,0 +1,30 @@
+add_newline = false
+format = """
+$directory\
+$character"""
+right_format = """$git_branch $git_status $git_state $cmd_duration"""
+
+[directory]
+truncation_length = 2
+
+[hostname]
+ssh_symbol = " "
+format = "[$ssh_symbol $hostname]($style) "
+
+[git_branch]
+symbol = ""
+format =  "[$symbol $branch (:$remote_branch)]($style)"
+
+[git_status]
+style = "bold blue"
+format = "[$modified$deleted$untracked$ahead_behind]($style) "
+modified = " "
+deleted = " "
+untracked = " "
+ahead = " "
+behind = " "
+up_to_date = " "
+
+[cmd_duration]
+min_time = 20_000
+

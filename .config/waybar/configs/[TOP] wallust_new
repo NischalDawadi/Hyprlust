@@ -1,0 +1,31 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height" : 34,
+  "width" : 1200,
+  "margin-left": 50,
+"margin-right": 50,
+"margin-top": 5,
+
+  "fixed-center": true,
+  "reload_style_on_change": true,
+  "include": ["~/.config/waybar/modules"],
+  "modules-left": [
+    "custom/menu",
+    "custom/separator#blank",
+    "hyprland/window",
+    "group/info",
+  ],
+  
+  "modules-center": [
+    "hyprland/workspaces#4"
+  ],
+
+  "modules-right": [
+  "idle_inhibitor",
+  "group/demo",
+   "group/hub",
+   "custom/power",
+    
+  ],
+}
