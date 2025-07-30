@@ -12,3 +12,5 @@
  --------------------------------------------- 
 ![Screenshot_25-Dec_20-49-53_2803](https://github.com/user-attachments/assets/0228d87f-d36c-4016-bbc8-e4a42f4a07a2)
 | --------------------------------------------- |
+Wallpapers
+https://github.com/NischalDawadi/Wallpapers
