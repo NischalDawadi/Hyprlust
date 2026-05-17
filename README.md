@@ -1,4 +1,6 @@
 ## ✨HYPRLUST✨ 
+Full Workflow
+https://youtu.be/1-3_ecWMCYI?si=2RlcdupZMlDZeyTW
 ## SHOWCASE 
 ![Screenshot_09-May_17-33-31_18717](https://github.com/user-attachments/assets/9185d56d-6156-4605-8c8e-a1c82154f8e9)
  --------------------------------------------- 
