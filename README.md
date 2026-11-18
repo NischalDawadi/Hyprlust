@@ -19,3 +19,16 @@ https://youtu.be/1-3_ecWMCYI?si=2RlcdupZMlDZeyTW
 
 Wallpapers
 https://github.com/NischalDawadi/Wallpapers
+
+---
+
+## 🐟 Fish edition — install
+
+This fork replaces zsh with **fish** and adds a one-command Arch installer.
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ro3in/Hyprlust/master/install.sh)"
+```
+
+Preview without changing anything: add `-- --dry-run` to the command above.
+See [INSTALL.md](INSTALL.md) for requirements and notes.
